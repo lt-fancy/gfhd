@@ -1,0 +1,190 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<head>
+    <title>hello</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" type="text/css" th:href="@{/css/common.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/common2.css}"/>
+    <script th:src="@{/js/jquery-3.2.1.min.js}"></script>
+    <script th:src="@{/js/base.js}"></script>
+    <script th:src="@{/js/common.js}"></script>
+    <script th:src="@{/js/form.js}"></script>
+    <script th:src="@{/js/blockui.js}"></script>
+    <script th:src="@{/js/base/context.js}"></script>
+</head>
+<body style="background:transparent">
+<div id="contain" style=" background:url(effect/source/bg/1262661247.gif) repeat-y;margin:0px auto;padding:0px">
+    <div id="top" style="height: 779px; background: none;">
+        <!-- 图片轮播(S1) -->
+        <div id="pdv_17268" class="pdv_class" title="" style="width:100%; height:779px;top:0px;left:0px;  z-index:1">
+            <div id="spdv_17268" class="pdv_top" style="overflow:hidden;width:100%;height:100%"><div class="pdv_border" style="border: 0px;">
+                <div class="banner">
+                    <div class="bd">
+                        <ul>
+
+                            <li style="background: url(/images/2_meitu_7.jpg) center top no-repeat;"></li>
+
+                            <li style="background: url(/images/17_meitu_6.jpg) center top no-repeat;"></li>
+
+                        </ul>
+                    </div>
+                    <div class="hd">
+                        <ul></ul>
+                    </div>
+                </div>
+                <script type="text/javascript" src="/js/jquery.SuperSlide.2.1.js"></script>
+                <script type="text/javascript" src="/js/common2.js"></script>
+            </div>
+            </div>
+        </div>
+
+        <!-- 二级下拉菜单16 -->
+
+        <div id="pdv_17266" class="pdv_class" style="width:100%; height:101px;top:0px;left:0px;  z-index:2">
+            <div id="spdv_17266" class="pdv_top" style="overflow:hidden;width:100%;height:100%"><div class="pdv_border" style="border: 0px; height: 101px;">
+                <style>.header {position: fixed;}</style>
+                <div class="header">
+                    <div class="wrap clearfix">
+                        <h1 class="logo"><a href="http://demo.weboss.hk/w062/index.php" title="">
+                            <img src="/images/1505207849.png"/></a></h1>
+                        <div class="nav">
+                            <ul class="clearfix" id="menus">
+                                <li th:each="menu,menuStat:${menus}"><a style="cursor: pointer" th:text="${menu.menuCname}" th:id="${menu.menuEname}"></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+    <div id="content" style="width: 1002px; height: 400px; background: none; margin: 0px auto;">
+
+
+        <!-- 文章列表 -->
+
+        <div id="pdv_17269" class="pdv_class" title="公司动态" style="width:511px;height:179px;top:30px;left:0px; z-index:3">
+            <div id="spdv_17269" class="pdv_content" style="overflow:hidden;width:100%;height:100%">
+                <div class="pdv_border" style="border: 0px; height: 179px; padding: 0px; margin: 0px;">
+                    <div class="tittle"><h2>公司动态<em>/ NEWS</em></h2><a href="http://demo.weboss.hk/w062/news/class/" class="more" style="display:inline;">+ more</a></div>
+                    <div style="margin:0px;padding:0px">
+
+                        <link href="./css/newslist.css" rel="stylesheet" type="text/css"/>
+                        <ul class="newslist">
+
+                            <li class="newslist"><a href="http://demo.weboss.hk/w062/news/html/?376.html" target="_self" class="newslist">本公司通过国家科技部高新技术企业认证</a></li>
+
+                            <li class="newslist"><a href="http://demo.weboss.hk/w062/news/html/?366.html" target="_self" class="newslist">某某公司新版网站全新改版成功</a></li>
+
+                            <li class="newslist"><a href="http://demo.weboss.hk/w062/news/html/?346.html" target="_self" class="newslist">国际质量管理和质量保证体系国际质量体系</a></li>
+
+                            <li class="newslist"><a href="http://demo.weboss.hk/w062/news/html/?338.html" target="_self" class="newslist">管理和质量保证体系国际质量管理和质量保证体系国际质量</a></li>
+
+                            <li class="newslist"><a href="http://demo.weboss.hk/w062/news/html/?336.html" target="_self" class="newslist">公司全面实施国际质量管理和质量保证体系司全面国际质量管</a></li>
+
+                        </ul>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- HTML编辑区 -->
+
+        <div id="pdv_17270" class="pdv_class" title="关于我们" style="width:467px;height:200px;top:30px;left:535px; z-index:4">
+            <div id="spdv_17270" class="pdv_content" style="overflow:hidden;width:100%;height:100%">
+                <div class="pdv_border" style="border: 0px; height: 200px; padding: 0px; margin: 0px;">
+                    <div class="tittle"><h2>关于我们<em>/ ABOUT US</em></h2><a href="http://demo.weboss.hk/w062/page/html/company.php" class="more" style="display:inline;">+ more</a></div>
+                    <div style="margin:0px;padding:5px">
+                        <span style="line-height:2;"><span style="color:#505050;font-size:14px;line-height:2;">企业形象通用成品网站系列预装了网页模块、文章模块、产品模块、图文模块、招聘模块、广告模块等功能，预设了企业简介、企业文化、最新动态、产品展示、经典案例、品牌加盟、人才招聘、联系方式、客户留言等栏目，用户也可根据自己的需要方便调整；企业形象通用成品网站系列采用原创的企业形象宣传广告图片轮播，精心设计制作，符合大多数企业网站的需求...</span></span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- 自定义模版 -->
+
+        <div id="pdv_17271" class="pdv_class" title="" style="width:1002px;height:154px;top:246px;left:0px; z-index:5">
+            <div id="spdv_17271" class="pdv_content" style="overflow:hidden;width:100%;height:100%"><div class="pdv_border" style="border: 0px; height: 154px;"><div class="contant">
+                <div class="m-tel">
+                    <img src="/images/img-2.jpg" alt=""/>
+                    <h2>客服热线</h2>
+                    <p id="hotline">021-123456</p>
+                </div>
+                <!--<div class="qxjj">-->
+                    <!--<a>-->
+                        <!--<img src="/images/code2.png" width="50" height="48"/>-->
+                        <!--<h2>我们的APP</h2>-->
+                        <!--<p>扫描下载</p>-->
+                    <!--</a>-->
+                <!--</div>-->
+                <!--<div class="m-wb">-->
+                    <!--<a href="http://demo.weboss.hk/w062/index.php" target="_blank">-->
+                        <!--<img src="/images/img-3.jpg" alt=""/>-->
+                        <!--<h2>我们微博</h2>-->
+                        <!--<p>快来关注我们微博</p>-->
+                    <!--</a>-->
+                <!--</div>-->
+                <div class="m-wx">
+                    <img src="/images/20150727114020.jpg" width="90" height="90" id="weixin"/>
+                    <div class="text">
+                        <p>扫一扫二维码</p>
+                        <p>关注我们微信</p>
+                    </div>
+                    <div class="fenxiang" style="background:url(/images/weixint.jpg) no-repeat"></div>
+                </div>
+            </div>
+            </div>
+            </div>
+        </div>
+    </div>
+    <div id="bottom" style="width: 1002px; height: 34px; background: rgb(0, 0, 0);">
+
+
+        <!-- 底部信息编辑区 -->
+
+        <div id="pdv_17272" class="pdv_class" title="脚注信息" style="width:1002px;height:29px;top:5px;left:0px; z-index:6">
+            <div id="spdv_17272" class="pdv_bottom" style="overflow:hidden;width:100%;height:100%"><div class="pdv_border" style="border: 0px; height: 29px;"><div style="width:100%;text-align:center;font:12px/20px Arial, Helvetica, sans-serif">
+                <p align="center">
+                    <span style="color:#FFFFFF;line-height:2;">CopyRight © 2014-2018 All Rights Reserved &nbsp;&nbsp;</span><span style="color:#FFFFFF;line-height:2;">沪ICP备123456789号</span>
+                </p>
+            </div>
+            </div>
+            </div>
+        </div>
+    </div>
+</div><div id="bodyex">
+
+</div>
+<div id="topex" style="display: none; width: 100%; height: 779px; background: none; top: 0px;">
+</div>
+<div id="contentex" style="display: none; width: 100%; height: 400px; background: none; top: 779px;">
+</div>
+<div id="bottomex" style="width: 100%; height: 34px; background: rgb(0, 0, 0); top: 1179px;">
+</div>
+<div id="advsex"></div>
+<div id="advsex1"></div>
+<div id="advsex2"></div>
+<div id="advsex3"></div>
+<div id="advsex4"></div>
+<div id="advsex5"></div>
+<div id="advsex6"></div>
+
+
+<script th:inline="javascript">
+    $(window).load(function () {
+        var name = [[${menuEname}]];
+        $("#"+name).attr('style','cursor:pointer;color:#CABA7C');
+        $("#"+name).siblings().attr('style','cursor:pointer;');
+        $("#hotline").html(getCommonByEname("hotline"));
+        $("#weixin").attr('src','./images/'+getCommonByEname("weixin"));
+    });
+    $("#menus").find('li').find('a').click(function () {
+        var i = $(this).attr('id');
+        window.location.href=getContextPath()+"/"+i;
+    });
+</script>
+</body>
+</html>

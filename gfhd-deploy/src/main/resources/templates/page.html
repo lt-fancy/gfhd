@@ -1,0 +1,340 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=11;IE=9;IE=8;IE=7"/>
+    <title>关于我们-某某股权投资基金有限公司</title>
+    <link rel="shortcut icon" href="http://demo.weboss.hk/w062/base/pics/favorite.ico"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/htmleaf-demo.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/common.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/common2.css}"/>
+    <script th:src="@{/js/jquery-3.2.1.min.js}"></script>
+    <script th:src="@{/js/jquery.SuperSlide.2.1.js}"></script>
+    <script th:src="@{/js/base.js}"></script>
+    <script th:src="@{/js/common.js}"></script>
+    <script th:src="@{/js/form.js}"></script>
+    <script th:src="@{/js/blockui.js}"></script>
+    <script th:src="@{/js/base/context.js}"></script>
+</head>
+<body style="background:transparent">
+
+<script>
+    var PDV_PAGEID = '2';
+    var PDV_RP = '../../';
+    var PDV_COLTYPE = 'news';
+    var PDV_PAGENAME = 'query';
+</script>
+
+<div id="contain" style=" background:transparent;margin:0px auto;padding:0px">
+
+    <div id="top" style="height: 450px; background: none;">
+
+
+        <!-- 全站通栏图片广告 -->
+        <div style="margin:0 auto;position:relative;width:1002px;">
+            <div id="pdv_17298" class="pdv_class" title="广告位"
+                 style="width:1002px;height:450px;top:0px;left:0px; z-index:3">
+                <div id="spdv_17298" class="pdv_top" style="overflow:hidden;width:100%;height:100%">
+                    <div class="pdv_border" style="border: 0px; height: 450px;">
+                        <link href="css/advsglobalpic2.css" rel="stylesheet" type="text/css"/>
+                        <script type="text/javascript" src="js/advsglobalpic2.js"></script>
+
+                        <div id="advsexDiv" style="background:url(./images/1505220326.jpg) center top no-repeat"><img
+                                src="./images/advsglobalpic2.png"/></div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 二级下拉菜单16 -->
+
+        <div id="pdv_17299" class="pdv_class" style="width:100%; height:101px;top:0px;left:0px;  z-index:4">
+            <div id="spdv_17299" class="pdv_top" style="overflow:hidden;width:100%;height:100%">
+                <div class="pdv_border" style="border: 0px; height: 101px;">
+                    <style>.header {
+                        position: fixed;
+                    }</style>
+                    <div class="header">
+                        <div class="wrap clearfix">
+                            <h1 class="logo"><a href="http://demo.weboss.hk/w062/" title="">
+                                <img src="./images/1505207849.png"/></a></h1>
+                            <div class="nav">
+                                <ul class="clearfix" id="menus">
+                                    <li th:each="menu,menuStat:${menus}"><a style="cursor: pointer" th:text="${menu.menuCname}" th:value="${menu.menuEname}"></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="content"
+         style="width: 1002px; height: 1728px; background: url(./images/c.jpg) 50% 0% repeat-x transparent; margin: 0px auto;">
+
+
+        <!-- 文章翻页检索 -->
+
+        <div id="pdv_17303" class="pdv_class" title="文章检索"
+             style="width: 1002px; height: 1461px; top: 90px; left: 0px; z-index: 1;">
+            <div id="spdv_17303" class="pdv_content" style="overflow:visible;width:100%;">
+                <div class="pdv_border" style="border:0">
+                    <link href="css/newsquery.css" rel="stylesheet" type="text/css"/>
+                    <div class="news">
+                        <div class="tittle" style="height:42px;font-size:24px;color:#CABA7C;">资讯动态</div>
+
+                        <form id="searchform" method="get" action="http://demo.weboss.hk/w062/news/class/index.php">
+                            <div class="shop_select">
+                                <div class="search-form" style="float: left;">
+                                    <div class="search-input-box">
+                                        <input id="key" name="key" onblur="if(this.value == '')this.value='关键字'"
+                                               onfocus="if(this.value == 'Search...')this.value = ''" placeholder="关键字"/>
+                                    </div>
+                                    <div class="search-btn">
+                                        <button type="button" value="" onclick="Search1()">搜索</button>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </form>
+                        <ul>
+
+                            <li>
+                                <a href="http://demo.weboss.hk/w062/news/html/?366.html">
+                                    <img src="./images/1365417851.jpg" width="251" height="127"/></a>
+                                <div class="text">
+                                    <h2><a href="http://demo.weboss.hk/w062/news/html/?366.html">某某公司新版网站全新改版成功</a></h2>
+                                    <span>2010-01-06</span>
+                                    <p>某某公司新版网站全新改版成功某某公司新版网站全新改版成功某某公司新版网站全新改版成功</p>
+                                    <a href="http://demo.weboss.hk/w062/news/html/?366.html" class="more">READ MORE</a>
+                                </div>
+                            </li>
+
+                            <li>
+                                <a href="http://demo.weboss.hk/w062/news/html/?346.html">
+                                    <img src="./images/nopic.gif" width="251" height="127"/></a>
+                                <div class="text">
+                                    <h2><a href="http://demo.weboss.hk/w062/news/html/?346.html">国际质量管理和质量保证体系国际质量体系</a>
+                                    </h2>
+                                    <span>2009-12-29</span>
+                                    <p></p>
+                                    <a href="http://demo.weboss.hk/w062/news/html/?346.html" class="more">READ MORE</a>
+                                </div>
+                            </li>
+
+                            <li>
+                                <a href="http://demo.weboss.hk/w062/news/html/?338.html">
+                                    <img src="./images/nopic.gif" width="251" height="127"/></a>
+                                <div class="text">
+                                    <h2><a href="http://demo.weboss.hk/w062/news/html/?338.html">管理和质量保证体系国际质量管理和质量保证体系国际质量</a>
+                                    </h2>
+                                    <span>2009-12-15</span>
+                                    <p></p>
+                                    <a href="http://demo.weboss.hk/w062/news/html/?338.html" class="more">READ MORE</a>
+                                </div>
+                            </li>
+
+                            <li>
+                                <a href="http://demo.weboss.hk/w062/news/html/?336.html">
+                                    <img src="./images/nopic.gif" width="251" height="127"/></a>
+                                <div class="text">
+                                    <h2><a href="http://demo.weboss.hk/w062/news/html/?336.html">公司全面实施国际质量管理和质量保证体系司全面国际质量管</a>
+                                    </h2>
+                                    <span>2009-12-15</span>
+                                    <p></p>
+                                    <a href="http://demo.weboss.hk/w062/news/html/?336.html" class="more">READ MORE</a>
+                                </div>
+                            </li>
+
+                            <li>
+                                <a href="http://demo.weboss.hk/w062/news/html/?335.html">
+                                    <img src="./images/nopic.gif" width="251" height="127"/></a>
+                                <div class="text">
+                                    <h2><a href="http://demo.weboss.hk/w062/news/html/?335.html">国际质量管理和质量保证体系国际质量管理和质量保证体系</a>
+                                    </h2>
+                                    <span>2009-12-15</span>
+                                    <p></p>
+                                    <a href="http://demo.weboss.hk/w062/news/html/?335.html" class="more">READ MORE</a>
+                                </div>
+                            </li>
+
+                            <li>
+                                <a href="http://demo.weboss.hk/w062/news/html/?321.html">
+                                    <img src="./images/nopic.gif" width="251" height="127"/></a>
+                                <div class="text">
+                                    <h2><a href="http://demo.weboss.hk/w062/news/html/?321.html">全面实施国际质量管理和质量保证体系司全面国际质量管理和质量保</a>
+                                    </h2>
+                                    <span>2009-12-10</span>
+                                    <p></p>
+                                    <a href="http://demo.weboss.hk/w062/news/html/?321.html" class="more">READ MORE</a>
+                                </div>
+                            </li>
+
+                            <li>
+                                <a href="http://demo.weboss.hk/w062/news/html/?320.html">
+                                    <img src="./images/nopic.gif" width="251" height="127"/></a>
+                                <div class="text">
+                                    <h2><a href="http://demo.weboss.hk/w062/news/html/?320.html">全面实施ISO9000国际质量管理和质量保证体系</a>
+                                    </h2>
+                                    <span>2009-12-10</span>
+                                    <p></p>
+                                    <a href="http://demo.weboss.hk/w062/news/html/?320.html" class="more">READ MORE</a>
+                                </div>
+                            </li>
+
+                        </ul>
+
+                        <div id="showpages" style="float:right">
+                            <div id="pagesinfo" th:text="'共'+${totalSizes}+'条 每页'+${pageSize}+'条 页次:'+${pageNum}+'/'+${totalPages}"></div>
+                            <div id="pages">
+                                <ul>
+                                    <li class="pbutton"><a
+                                            href="http://demo.weboss.hk/w062/news/class/index.php?page=1&amp;catid=86&amp;myord=dtime&amp;myshownums=&amp;showtj=&amp;showdate=&amp;author=&amp;key=">首页</a>
+                                    </li>
+                                    <li class="pbutton">上一页</li>
+                                    <li class="pagesnow" th:each="pageNo : ${#numbers.sequence(1, totalPages)}" th:text="${pageNo}"></li>
+                                    <li class="pbutton">下一页</li>
+                                    <li class="opt"><select
+                                            onchange="window.location=this.options[this.selectedIndex].value">
+                                        <option th:each="pageNo : ${#numbers.sequence(1, totalPages)}" th:text="'第'+${pageNo}+'页'" value="/w062/news/class/index.php?page=1&amp;catid=86&amp;myord=dtime&amp;myshownums=&amp;showtj=&amp;showdate=&amp;author=&amp;key="
+                                                selected="">
+                                        </option>
+                                    </select></li>
+                                    <li class="pbutton"><a
+                                            href="http://demo.weboss.hk/w062/news/class/index.php?page=1&amp;catid=86&amp;myord=dtime&amp;myshownums=&amp;showtj=&amp;showdate=&amp;author=&amp;key=">尾页</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <script type="text/javascript">
+
+                        function Search1() {
+                            $("#searchform").submit();
+                            return true;
+                        }
+                    </script>
+                </div>
+            </div>
+        </div>
+
+        <!-- 文章逐级分类 -->
+
+        <div id="pdv_17302" class="pdv_class" title="文章分类" style="width:1002px;height:72px;top:0px;left:0px; z-index:2">
+            <div id="spdv_17302" class="pdv_content" style="overflow:hidden;width:100%;height:100%">
+                <div class="pdv_border" style="border: 0px; height: 72px;">
+                    <link href="css/newsclass.css" rel="stylesheet" type="text/css"/>
+                    <div class="sidebar">
+                        <div class="wrap">
+                            <ul>
+
+                                <li class="dq"><a href="http://demo.weboss.hk/w062/news/class/?102.html">公司公告</a></li>
+
+                                <li class="dq"><a href="http://demo.weboss.hk/w062/news/class/?103.html">公司动态</a></li>
+
+                                <li class="dq"><a href="http://demo.weboss.hk/w062/news/class/?104.html">行业新闻</a></li>
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 自定义模版 -->
+
+        <div id="pdv_17301" class="pdv_class" title=""
+             style="width: 1002px; height: 167px; top: 1561px; left: 0px; z-index: 6;">
+            <div id="spdv_17301" class="pdv_content" style="overflow:hidden;width:100%;height:100%">
+                <div class="pdv_border" style="border: 0px; height: 167px;">
+                    <div class="contant">
+                        <div class="m-tel">
+                            <img src="./images/img-2.jpg" alt=""/>
+                            <h2>客服热线</h2>
+                            <p>021-123456</p>
+                        </div>
+                        <div class="qxjj">
+                            <a>
+                                <img src="./images/code2.png" width="50" height="48"/>
+                                <h2>我们的APP</h2>
+                                <p>扫描下载</p>
+                            </a>
+                        </div>
+                        <div class="m-wb">
+                            <a href="http://demo.weboss.hk/w062/" target="_blank">
+                                <img src="./images/img-3.jpg" alt=""/>
+                                <h2>我们微博</h2>
+                                <p>快来关注我们微博</p>
+                            </a>
+                        </div>
+                        <div class="m-wx">
+                            <img src="./images/20150727114020.jpg" width="90" height="90"/>
+                            <div class="text">
+                                <p>扫一扫二维码</p>
+                                <p>关注我们微信</p>
+                            </div>
+                            <div class="fenxiang" style="background:url(./images/weixint.jpg) no-repeat"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="bottom" style="width: 1002px; height: 34px; background: none 0% 0% repeat rgb(0, 0, 0);">
+
+
+        <!-- 底部信息编辑区 -->
+
+        <div id="pdv_17300" class="pdv_class" title="脚注信息" style="width:1002px;height:29px;top:5px;left:0px; z-index:5">
+            <div id="spdv_17300" class="pdv_bottom" style="overflow:hidden;width:100%;height:100%">
+                <div class="pdv_border" style="border: 0px; height: 29px;">
+                    <div style="width:100%;text-align:center;font:12px/20px Arial, Helvetica, sans-serif">
+                        <p align="center">
+                            <span style="color:#FFFFFF;line-height:2;">CopyRight © 2014-2018 All Rights Reserved &nbsp;&nbsp;</span><span
+                                style="color:#FFFFFF;line-height:2;">沪ICP备123456789号</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="bodyex">
+
+</div>
+<div id="topex" style="display: none; width: 100%; height: 450px; background: none; top: 0px;">
+</div>
+<div id="contentex"
+     style="width: 100%; height: 1728px; background: url(./images/c.jpg) 50% 0% repeat-x transparent; top: 450px;">
+</div>
+<div id="bottomex" style="width: 100%; height: 34px; background: none 0% 0% repeat rgb(0, 0, 0); top: 2178px;">
+</div>
+<div id="advsex"
+     style="background: url(./images/1505220326.jpg) center top no-repeat; height: 450px; top: 0px; display: block;"></div>
+<div id="advsex1"></div>
+<div id="advsex2"></div>
+<div id="advsex3"></div>
+<div id="advsex4"></div>
+<div id="advsex5"></div>
+<div id="advsex6"></div>
+
+<script th:inline="javascript">
+    $(window).load(function () {
+        var name = [[${menuEname}]];
+        $("#"+name).attr('style','cursor:pointer;color:#CABA7C');
+        $("#"+name).siblings().attr('style','cursor:pointer;');
+    });
+    function getContextPath() {
+        var path = window.document.location.href;
+        var pathName=window.document.location.pathname;
+        var localhostPaht=path.substring(0,path.indexOf(pathName));
+        return localhostPaht;
+    }
+    $("#menus").find('li').find('a').click(function () {
+        var i = $(this).attr('value');
+        window.location.href=getContextPath()+"/"+i;
+    });
+</script>
+</body>
+</html>

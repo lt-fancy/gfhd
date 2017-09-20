@@ -1,0 +1,19 @@
+/* ============���ݷ�ҳ============== */
+
+div.page_content {
+border:1px #ddd solid;
+border-radius:8px; 
+-moz-border-radius:8px; 
+-webkit-border-radius:8px; 
+font:14px/32px 'microsoft yahei',Verdana, Arial;
+color:#505050;
+padding:30px;
+margin-bottom:20px;
+}
+
+div.page_content p,div.page_content a,div.page_content td,div.page_content span,div.page_content li{
+font:14px/32px 'microsoft yahei',Verdana, Arial;
+color:#505050;
+}
+
+

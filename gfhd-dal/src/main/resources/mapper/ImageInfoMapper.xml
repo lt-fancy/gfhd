@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.sawallianc.dao.ImageInfoDAO">
+    <resultMap id="imageMap" type="com.sawallianc.module.ImageInfoDO">
+        <id property="id" column="id"/>
+        <result property="menuCname" column="menu_cname"/>
+        <result property="menuEname" column="menu_ename"/>
+        <result property="imageUri" column="image_uri"/>
+        <result property="imageTitle" column="image_title"/>
+        <result property="gmtCreated" column="gmt_created"/>
+        <result property="gmtModified" column="gmt_modified"/>
+        <result property="isDeleted" column="is_deleted"/>
+    </resultMap>
+
+    <sql id="baseImage">
+        id,menu_cname,menu_ename,image_uri,image_title,gmt_created,gmt_modified,is_deleted
+    </sql>
+
+    <select id="getImageByEname" resultMap="imageMap">
+        select <include refid="baseImage"/>
+        from image_info
+        where is_deleted=0
+        and menu_ename=#{ename}
+    </select>
+
+</mapper>

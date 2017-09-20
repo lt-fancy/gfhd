@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.sawallianc.dao.ListInfoDAO">
+    <resultMap id="listMap" type="com.sawallianc.module.ListInfoDO">
+        <id property="id" column="id"/>
+        <result property="menuCname" column="menu_cname"/>
+        <result property="menuEname" column="menu_ename"/>
+        <result property="listTitle" column="list_title"/>
+        <result property="listContent" column="list_content"/>
+        <result property="gmtCreated" column="gmt_created"/>
+        <result property="gmtModified" column="gmt_modified"/>
+        <result property="isDeleted" column="is_deleted"/>
+        <result property="author" column="author"/>
+    </resultMap>
+
+    <sql id="baseList">
+        id,menu_cname,menu_ename,list_title,list_content,gmt_created,gmt_modified,is_deleted,author
+    </sql>
+
+    <select id="getListByEname" resultMap="listMap">
+        select <include refid="baseList"/>
+        from list_info
+        where is_deleted=0
+        and menu_ename=#{ename}
+    </select>
+
+    <select id="countAllList" resultType="java.lang.Integer">
+        select count(*)
+        from list_info
+        where is_deleted=0
+        and menu_ename=#{ename}
+    </select>
+
+</mapper>

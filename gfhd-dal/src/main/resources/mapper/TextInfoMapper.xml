@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.sawallianc.dao.TextInfoDAO">
+    <resultMap id="textMap" type="com.sawallianc.module.TextInfoDO">
+        <id property="id" column="id"/>
+        <result property="menuCname" column="menu_cname"/>
+        <result property="menuEname" column="menu_ename"/>
+        <result property="text" column="text"/>
+        <result property="gmtCreated" column="gmt_created"/>
+        <result property="gmtModified" column="gmt_modified"/>
+        <result property="isDeleted" column="is_deleted"/>
+    </resultMap>
+
+    <sql id="baseText">
+        id,menu_cname,menu_ename,text,gmt_created,gmt_modified,is_deleted
+    </sql>
+
+    <select id="getTextByMenuEname" resultMap="textMap">
+        select <include refid="baseText"/>
+        from text_info
+        where is_deleted=0
+        and menu_ename=#{ename}
+    </select>
+
+</mapper>

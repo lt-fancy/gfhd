@@ -1,0 +1,227 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=11;IE=9;IE=8;IE=7"/>
+    <title>关于我们-某某股权投资基金有限公司</title>
+    <link rel="shortcut icon" href="http://demo.weboss.hk/w062/base/pics/favorite.ico"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/htmleaf-demo.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/common.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/common2.css}"/>
+    <script th:src="@{/js/jquery-3.2.1.min.js}"></script>
+    <script th:src="@{/js/jquery.SuperSlide.2.1.js}"></script>
+    <script th:src="@{/js/base.js}"></script>
+    <script th:src="@{/js/common.js}"></script>
+    <script th:src="@{/js/form.js}"></script>
+    <script th:src="@{/js/blockui.js}"></script>
+    <script th:src="@{/js/base/context.js}"></script>
+</head>
+<body style="background:transparent">
+
+<script>
+    var PDV_PAGEID = '527';
+    var PDV_RP = '../../';
+    var PDV_COLTYPE = 'page';
+    var PDV_PAGENAME = 'Invests';
+</script>
+
+<div id="contain" style=" background:transparent;margin:0px auto;padding:0px">
+
+    <div id="top" style="height: 450px; background: none;">
+
+
+        <!-- 全站通栏图片广告 -->
+        <div style="margin:0 auto;position:relative;width:1002px;">
+            <div id="pdv_17376" class="pdv_class" title="广告位"
+                 style="width:1002px;height:450px;top:0px;left:0px; z-index:3">
+                <div id="spdv_17376" class="pdv_top" style="overflow:hidden;width:100%;height:100%">
+                    <div class="pdv_border" style="border: 0px; height: 450px;">
+                        <link href="css/advsglobalpic2.css" rel="stylesheet" type="text/css"/>
+                        <script type="text/javascript" src="js/advsglobalpic2.js"></script>
+
+                        <div id="advsexDiv" style="background:url(./images/1505220037.jpg) center top no-repeat"><img
+                                src="./images/advsglobalpic2.png"/></div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 二级下拉菜单16 -->
+
+        <div id="pdv_17375" class="pdv_class" style="width:100%; height:101px;top:0px;left:0px;  z-index:4">
+            <div id="spdv_17375" class="pdv_top" style="overflow:hidden;width:100%;height:100%">
+                <div class="pdv_border" style="border: 0px; height: 101px;">
+                    <style>.header {
+                        position: fixed;
+                    }</style>
+                    <div class="header">
+                        <div class="wrap clearfix">
+                            <h1 class="logo"><a href="http://demo.weboss.hk/w062/" title="">
+                                <img src="./images/1505207849.png"/></a></h1>
+                            <div class="nav">
+                                <ul class="clearfix" id="menus">
+                                    <li th:each="menu,menuStat:${menus}"><a style="cursor: pointer" th:text="${menu.menuCname}" th:id="${menu.menuEname}"></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="content"
+         style="width: 1002px; height: 959px; background: url(./images/c.jpg) 50% 0% repeat-x transparent; margin: 0px auto;">
+
+
+        <!-- 网页标题(菜单) -->
+
+        <div id="pdv_17372" class="pdv_class" title="栏目导航" style="width:1002px;height:58px;top:0px;left:0px; z-index:1">
+            <div id="spdv_17372" class="pdv_content" style="overflow:hidden;width:100%;height:100%">
+                <div class="pdv_border" style="border: 0px; height: 58px;">
+                    <link href="css/pagetitlemenu_dolphin.css" rel="stylesheet" type="text/css"/>
+                    <div class="sidebar">
+                        <div class="wrap">
+                            <ul>
+
+                                <li class="dq"><a href="http://demo.weboss.hk/w062/page/html/company.php">关于我们</a></li>
+
+                                <li class="dq"><a href="http://demo.weboss.hk/w062/page/html/ldzc.php">领导致辞</a></li>
+
+                                <li class="dq"><a href="http://demo.weboss.hk/w062/page/html/hjzs.php">荣誉证书</a></li>
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 标题+摘要+主题图 -->
+
+        <div id="pdv_17377" class="pdv_class" title=""
+             style="width: 1002px; height: 693px; top: 89px; left: 0px; z-index: 2;">
+            <div id="spdv_17377" class="pdv_content" style="overflow:visible;width:100%;">
+                <div class="pdv_border" style="border:0">
+                    <link href="css/pagepiclist.css" rel="stylesheet" type="text/css"/>
+
+                    <div class="case">
+                        <div class="tittle" style="margin-bottom:20px;height:42px;font-size:24px;color:#CABA7C;">投资领域
+                        </div>
+                        <ul>
+
+                            <li><a href="http://demo.weboss.hk/w062/page/Invest/?97.html">
+                                <img src="./images/1505185354.jpg" width="270" height="180" alt=""/>
+                                <h2>教育</h2>
+                            </a></li>
+
+                            <li><a href="http://demo.weboss.hk/w062/page/Invest/?98.html">
+                                <img src="./images/1505185399.jpg" width="270" height="180" alt=""/>
+                                <h2>旅游</h2>
+                            </a></li>
+
+                            <li><a href="http://demo.weboss.hk/w062/page/Invest/?99.html">
+                                <img src="./images/1505185445.jpg" width="270" height="180" alt=""/>
+                                <h2>医疗</h2>
+                            </a></li>
+
+                            <li><a href="http://demo.weboss.hk/w062/page/Invest/?100.html">
+                                <img src="./images/1505185489.jpg" width="270" height="180" alt=""/>
+                                <h2>能源环保</h2>
+                            </a></li>
+
+                            <li><a href="http://demo.weboss.hk/w062/page/Invest/?101.html">
+                                <img src="./images/1505185536.jpg" width="270" height="180" alt=""/>
+                                <h2>养老</h2>
+                            </a></li>
+
+                            <li><a href="http://demo.weboss.hk/w062/page/Invest/?102.html">
+                                <img src="./images/1505185570.jpg" width="270" height="180" alt=""/>
+                                <h2>传媒</h2>
+                            </a></li>
+
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 自定义模版 -->
+
+        <div id="pdv_17371" class="pdv_class" title=""
+             style="width: 1002px; height: 167px; top: 792px; left: 0px; z-index: 6;">
+            <div id="spdv_17371" class="pdv_content" style="overflow:hidden;width:100%;height:100%">
+                <div class="pdv_border" style="border: 0px; height: 167px;">
+                    <div class="contant">
+                        <div class="m-tel">
+                            <img src="./images/img-2.jpg" alt=""/>
+                            <h2>客服热线</h2>
+                            <p id="hotline">021-123456</p>
+                        </div>
+                        <div class="m-wx">
+                            <img src="./images/20150727114020.jpg" width="90" height="90" id="weixin"/>
+                            <div class="text">
+                                <p>扫一扫二维码</p>
+                                <p>关注我们微信</p>
+                            </div>
+                            <div class="fenxiang" style="background:url(./images/weixint.jpg) no-repeat"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="bottom" style="width: 1002px; height: 34px; background: none 0% 0% repeat rgb(0, 0, 0);">
+
+
+        <!-- 底部信息编辑区 -->
+
+        <div id="pdv_17374" class="pdv_class" title="脚注信息" style="width:1002px;height:29px;top:5px;left:0px; z-index:5">
+            <div id="spdv_17374" class="pdv_bottom" style="overflow:hidden;width:100%;height:100%">
+                <div class="pdv_border" style="border: 0px; height: 29px;">
+                    <div style="width:100%;text-align:center;font:12px/20px Arial, Helvetica, sans-serif">
+                        <p align="center">
+                            <span style="color:#FFFFFF;line-height:2;">CopyRight © 2014-2018 All Rights Reserved &nbsp;&nbsp;</span><span
+                                style="color:#FFFFFF;line-height:2;">沪ICP备123456789号</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="bodyex">
+
+</div>
+<div id="topex" style="display: none; width: 100%; height: 450px; background: none; top: 0px;">
+</div>
+<div id="contentex"
+     style="width: 100%; height: 959px; background: url(./images/c.jpg) 50% 0% repeat-x transparent; top: 450px;">
+</div>
+<div id="bottomex" style="width: 100%; height: 34px; background: none 0% 0% repeat rgb(0, 0, 0); top: 1409px;">
+</div>
+<div id="advsex"
+     style="background: url(./images/1505220037.jpg) center top no-repeat; height: 450px; top: 0px; display: block;"></div>
+<div id="advsex1"></div>
+<div id="advsex2"></div>
+<div id="advsex3"></div>
+<div id="advsex4"></div>
+<div id="advsex5"></div>
+<div id="advsex6"></div>
+
+<script th:inline="javascript">
+    $(window).load(function () {
+        var name = [[${menuEname}]];
+        $("#"+name).attr('style','cursor:pointer;color:#CABA7C');
+        $("#"+name).siblings().attr('style','cursor:pointer;');
+        $("#hotline").html(getCommonByEname("hotline"));
+        $("#weixin").attr('src','./images/'+getCommonByEname("weixin"));
+    });
+    $("#menus").find('li').find('a').click(function () {
+        var i = $(this).attr('id');
+        window.location.href=getContextPath()+"/"+i;
+    });
+</script>
+</body>
+</html>

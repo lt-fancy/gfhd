@@ -1,0 +1,5 @@
+.sidebar {width:100%; height: 60px; background: #f3f3f3; }
+.sidebar ul { overflow: hidden; background:url(../images/icon-4.jpg) no-repeat left center;}
+.sidebar li { float: left; padding: 0 65px; background:url(../images/icon-4.jpg) no-repeat right center;}
+.sidebar li a { color: #000000; font:normal 16px/60px "microsoft yahei";}
+.sidebar li:hover a,.sidebar li.dq a { color: #938057;}

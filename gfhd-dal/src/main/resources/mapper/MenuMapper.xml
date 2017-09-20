@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.sawallianc.dao.MenuDAO">
+    <resultMap id="menuMap" type="com.sawallianc.module.MenuDO">
+        <id property="id" column="id"/>
+        <result property="parentId" column="parent_id"/>
+        <result property="menuCname" column="menu_cname"/>
+        <result property="menuEname" column="menu_ename"/>
+        <result property="menuUri" column="menu_uri"/>
+        <result property="isParent" column="is_parent"/>
+        <result property="orderIndex" column="order_index"/>
+        <result property="gmtCreated" column="gmt_created"/>
+        <result property="gmtModified" column="gmt_modified"/>
+        <result property="isDeleted" column="is_deleted"/>
+    </resultMap>
+
+    <sql id="baseMenu">
+        id,parent_id,menu_cname,menu_ename,menu_uri,is_parent,order_index,gmt_created,gmt_modified,is_deleted
+    </sql>
+
+    <select id="queryAllMenuByOrder" resultMap="menuMap">
+        select <include refid="baseMenu"/>
+        from menu_info
+        where is_deleted=0
+        order by order_index asc
+    </select>
+
+    <select id="queryAllParentMenuOnly" resultMap="menuMap">
+        select <include refid="baseMenu"/>
+        from menu_info
+        where is_deleted=0
+        and is_parent=0
+        order by order_index asc
+    </select>
+
+    <select id="queryMenuById" resultMap="menuMap">
+        select <include refid="baseMenu"/>
+        from menu_info
+        where id=#{id}
+    </select>
+
+    <select id="queryMenuByEname" resultMap="menuMap">
+        select <include refid="baseMenu"/>
+        from menu_info
+        where menu_ename=#{ename}
+    </select>
+
+    <select id="queryChildrenByParentId" resultMap="menuMap">
+        select <include refid="baseMenu"/>
+        from menu_info
+        where parent_id=#{id}
+    </select>
+
+    <insert id="addMenu">
+        insert into menu_info
+        (parent_id,menu_cname,menu_ename,menu_uri,is_parent,order_index,gmt_created,gmt_modified,is_deleted)
+        VALUES
+        (#{info.parentId},#{info.menuCname},#{info.menuEname},#{info.menuUri}
+        ,#{info.isParent},#{info.orderIndex},now(),now(),0)
+    </insert>
+
+    <insert id="batchAddMenu">
+        insert into menu_info
+        (parent_id,menu_cname,menu_ename,menu_uri,is_parent,order_index,gmt_created,gmt_modified,is_deleted)
+        VALUES
+        <foreach collection="list" item="info" separator=",">
+        (#{info.parentId},#{info.menuCname},#{info.menuEname},#{info.menuUri}
+        ,#{info.isParent},#{info.orderIndex},now(),now(),0)
+        </foreach>
+    </insert>
+
+    <update id="modifyMenu" parameterType="com.sawallianc.module.MenuDO">
+        update menu_info
+         <set>
+            <if test="parentId!=null and parentId!=''">
+                parent_id=#{parentId},
+            </if>
+             <if test="menuCname!=null and menuCname!=''">
+                 menu_cname=#{menuCname},
+             </if>
+             <if test="menuEname!=null and menuEname!=''">
+                 menu_ename=#{menuEname},
+             </if>
+             <if test="orderIndex!=null and orderIndex!=''">
+                 order_index=#{orderIndex},
+             </if>
+             <if test="gmtModidied!=null and gmtModified!=''">
+                 gmt_modified=now()
+             </if>
+         </set>
+        where id=#{info.id}
+    </update>
+
+    <update id="batchDeleteMenu">
+        update menu_info set is_deleted=1,gmt_modified=now()
+        where id IN
+        <foreach collection="list" item="info" separator=",">
+            (#{info})
+        </foreach>
+    </update>
+</mapper>

@@ -1,0 +1,51 @@
+server:
+ port: 2222
+
+spring:
+  application:
+    name: gfhd-dev
+  http:
+    converters:
+      preferred-json-mapper: fastjson
+  thymeleaf:
+    mode: HTML5
+    encoding: UTF-8
+    content-type: text/html
+    cache: false
+  datasource:
+    url: jdbc:mysql://localhost:3306/biz?useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true&serverTimezone=UTC
+    username: root
+    password: a8594588
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    filters: stat
+    maxActive: 20
+    initialSize: 1
+    maxWait: 60000
+    validationQuery: select 1
+    minIdle: 1
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 300000
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    poolPreparedStatements: true
+    maxOpenPreparedStatements: 20
+
+redis:
+  hostName: 127.0.0.1
+  port: 6379
+  pool:
+    max-active: 8
+    max-wait: 1
+    max-idle: 8
+    min-idle: 0
+    timeout: 60000
+#eureka:
+#  instance:
+#    prefer-ip-address: true
+#    instance-id: ${spring.cloud.client.ipAddress}:${server.port}
+#  client:
+#    serviceUrl:
+#      defaultZone: http://localhost:8594/eureka/
+
+
