@@ -43,6 +43,11 @@ public class ListServiceImpl implements ListService{
         return listInfoDAO.countAllList(ename);
     }
 
+    @Override
+    public ListInfoBO getListInfoById(long id) {
+        return this.boFromDO(listInfoDAO.getListInfoById(id));
+    }
+
     private ListInfoBO boFromDO(ListInfoDO listInfoDO){
         if(null == listInfoDO){
             return null;

@@ -13,6 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 
 import java.lang.reflect.Method;
 
@@ -37,7 +38,12 @@ public class FrontModelAdvice {
         Method method = methodSignature.getMethod();
         Object[] objs = joinPoint.getArgs();
         Model model = (Model) objs[0];
-        String ename = method.getName();
+        GetMapping get = method.getAnnotation(GetMapping.class);
+        String ename = get.value()[0];
+        ename = ename.replaceAll("/","");
+        if(ename.contains("-")){
+            ename = ename.substring(0,ename.indexOf("-"));
+        }
         model.addAttribute("menus", menuService.queryAllParentMenuOnly());
         model.addAttribute("menuEname",ename);
         model.addAttribute("children", menuService.queryChildrenByEname(ename));

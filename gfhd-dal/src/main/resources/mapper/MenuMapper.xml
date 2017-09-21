@@ -51,6 +51,7 @@
         select <include refid="baseMenu"/>
         from menu_info
         where parent_id=#{id}
+        order by order_index asc
     </select>
 
     <insert id="addMenu">

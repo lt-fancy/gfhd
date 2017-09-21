@@ -11,4 +11,6 @@ public interface ListService {
     PageInfo<ListInfoBO> pageQueryList(String ename,Integer page, Integer pageSize);
 
     int countAllList(String ename);
+
+    ListInfoBO getListInfoById(long id);
 }

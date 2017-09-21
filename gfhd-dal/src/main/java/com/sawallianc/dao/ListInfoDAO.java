@@ -9,4 +9,6 @@ public interface ListInfoDAO {
     List<ListInfoDO> getListByEname(@Param("ename")String ename);
 
     int countAllList(@Param("ename")String ename);
+
+    ListInfoDO getListInfoById(@Param("id")long id);
 }

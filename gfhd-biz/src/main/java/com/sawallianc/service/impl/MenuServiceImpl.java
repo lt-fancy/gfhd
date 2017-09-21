@@ -62,6 +62,11 @@ public class MenuServiceImpl implements MenuService {
     }
 
     @Override
+    public MenuDO queryMenuByEname(String ename) {
+        return menuDAO.queryMenuByEname(ename);
+    }
+
+    @Override
     public List<MenuDO> queryChildrenByParentId(Long id) {
         return menuDAO.queryChildrenByParentId(id);
     }

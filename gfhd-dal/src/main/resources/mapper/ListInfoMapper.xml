@@ -33,4 +33,9 @@
         and menu_ename=#{ename}
     </select>
 
+    <select id="getListInfoById" resultMap="listMap">
+        select <include refid="baseList"/>
+        from list_info
+        where id=#{id}
+    </select>
 </mapper>

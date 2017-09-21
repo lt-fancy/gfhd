@@ -18,13 +18,6 @@
 </head>
 <body style="background:transparent">
 
-<script>
-    var PDV_PAGEID = '2';
-    var PDV_RP = '../../';
-    var PDV_COLTYPE = 'news';
-    var PDV_PAGENAME = 'query';
-</script>
-
 <div id="contain" style=" background:transparent;margin:0px auto;padding:0px">
 
     <div id="top" style="height: 450px; background: none;">
@@ -32,9 +25,9 @@
 
         <!-- 全站通栏图片广告 -->
         <div style="margin:0 auto;position:relative;width:1002px;">
-            <div id="pdv_17298" class="pdv_class" title="广告位"
+            <div class="pdv_class" title="广告位"
                  style="width:1002px;height:450px;top:0px;left:0px; z-index:3">
-                <div id="spdv_17298" class="pdv_top" style="overflow:hidden;width:100%;height:100%">
+                <div class="pdv_top" style="overflow:hidden;width:100%;height:100%">
                     <div class="pdv_border" style="border: 0px; height: 450px;">
                         <link href="css/advsglobalpic2.css" rel="stylesheet" type="text/css"/>
                         <script type="text/javascript" src="js/advsglobalpic2.js"></script>
@@ -49,8 +42,8 @@
 
         <!-- 二级下拉菜单16 -->
 
-        <div id="pdv_17299" class="pdv_class" style="width:100%; height:101px;top:0px;left:0px;  z-index:4">
-            <div id="spdv_17299" class="pdv_top" style="overflow:hidden;width:100%;height:100%">
+        <div class="pdv_class" style="width:100%; height:101px;top:0px;left:0px;  z-index:4">
+            <div class="pdv_top" style="overflow:hidden;width:100%;height:100%">
                 <div class="pdv_border" style="border: 0px; height: 101px;">
                     <style>.header {
                         position: fixed;
@@ -76,26 +69,16 @@
 
         <!-- 文章翻页检索 -->
 
-        <div id="pdv_17303" class="pdv_class"
+        <div class="pdv_class"
              style="width: 1002px; height: 1456px; top: 90px; left: 0px; z-index: 1;">
-            <div id="spdv_17303" class="pdv_content" style="overflow:visible;width:100%;">
+            <div class="pdv_content" style="overflow:visible;width:100%;">
                 <div class="pdv_border" style="border:0">
                     <link href="css/newsquery.css" rel="stylesheet" type="text/css"/>
                     <div class="news">
                         <div id="sub-title" class="tittle" style="height:42px;font-size:24px;color:#CABA7C;"></div>
 
-                        <form id="searchform" method="get" action="http://demo.weboss.hk/w062/news/class/index.php">
+                        <form id="searchform">
                             <div class="shop_select">
-                                <!--<div class="search-form" style="float: left;">-->
-                                    <!--<div class="search-input-box">-->
-                                        <!--<input id="key" name="key" onblur="if(this.value == '')this.value='关键字'"-->
-                                               <!--onfocus="if(this.value == 'Search...')this.value = ''" placeholder="关键字"/>-->
-                                    <!--</div>-->
-                                    <!--<div class="search-btn">-->
-                                        <!--<button type="button" value="" onclick="Search1()">搜索</button>-->
-                                    <!--</div>-->
-                                <!--</div>-->
-
                             </div>
                         </form>
                         <ul>
@@ -136,21 +119,14 @@
                             </div>
                         </div>
                     </div>
-                    <script type="text/javascript">
-
-                        function Search1() {
-                            $("#searchform").submit();
-                            return true;
-                        }
-                    </script>
                 </div>
             </div>
         </div>
 
         <!-- 文章逐级分类 -->
 
-        <div id="pdv_17302" class="pdv_class" style="width:1002px;height:72px;top:0px;left:0px; z-index:2">
-            <div id="spdv_17302" class="pdv_content" style="overflow:hidden;width:100%;height:100%">
+        <div class="pdv_class" style="width:1002px;height:72px;top:0px;left:0px; z-index:2">
+            <div class="pdv_content" style="overflow:hidden;width:100%;height:100%">
                 <div class="pdv_border" style="border: 0px; height: 72px;">
                     <link href="css/newsclass.css" rel="stylesheet" type="text/css"/>
                     <div class="sidebar">
@@ -166,9 +142,9 @@
 
         <!-- 自定义模版 -->
 
-        <div id="pdv_17301" class="pdv_class" title=""
+        <div class="pdv_class" title=""
              style="width: 1002px; height: 167px; top: 1561px; left: 0px; z-index: 6;">
-            <div id="spdv_17301" class="pdv_content" style="overflow:hidden;width:100%;height:100%">
+            <div class="pdv_content" style="overflow:hidden;width:100%;height:100%">
                 <div class="pdv_border" style="border: 0px; height: 167px;">
                     <div class="contant">
                         <div class="m-tel">
@@ -188,14 +164,38 @@
                 </div>
             </div>
         </div>
+        <div class="pdv_class" title="文章正文"
+             style="width: 1001px; height: 415px; top: 78px; left: 0px; z-index: 6;">
+            <div class="pdv_content" style="overflow:visible;width:100%;">
+                <div class="pdv_border" style="border:0">
+                    <link href="./css/newscontent.css" rel="stylesheet"
+                          type="text/css"/>
+                    <script type="text/javascript"
+                            src="./js/newscontent.js"></script>
+                    <div id="newscontent">
+                        <div class="newstitle">管理和质量保证体系国际质量管理和质量保证体系国际质量</div>
+                        <div class="info">作者：管理员 &nbsp;&nbsp; 发布于：2009-12-15 16:22:19</div>
+                        <div id="memo" class="memo" style="display:none"><span style="color:#ff6600">摘要：</span></div>
+                        <div id="con" class="con"><p>公司全面实施ISO9000、2000国际质量管理和质量保证体系</p>
+                            <p>公司全面实施ISO9000、2000国际质量管理和质量保证体系</p>
+                            <p>公司全面实施ISO9000、2000国际质量管理和质量保证体系</p>
+                            <p>公司全面实施ISO9000、2000国际质量管理和质量保证体系</p>
+                            <p>公司全面实施ISO9000、2000国际质量管理和质量保证体系</p>
+                            <p>公司全面实施ISO9000、2000国际质量管理和质量保证体系</p>
+                            <p>公司全面实施ISO9000、2000国际质量管理和质量保证体系</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     <div id="bottom" style="width: 1002px; height: 34px; background: none 0% 0% repeat rgb(0, 0, 0);">
 
 
         <!-- 底部信息编辑区 -->
 
-        <div id="pdv_17300" class="pdv_class" title="脚注信息" style="width:1002px;height:29px;top:5px;left:0px; z-index:5">
-            <div id="spdv_17300" class="pdv_bottom" style="overflow:hidden;width:100%;height:100%">
+        <div class="pdv_class" title="脚注信息" style="width:1002px;height:29px;top:5px;left:0px; z-index:5">
+            <div class="pdv_bottom" style="overflow:hidden;width:100%;height:100%">
                 <div class="pdv_border" style="border: 0px; height: 29px;">
                     <div style="width:100%;text-align:center;font:12px/20px Arial, Helvetica, sans-serif">
                         <p align="center">

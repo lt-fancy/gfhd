@@ -22,6 +22,8 @@ public interface MenuService {
 
     MenuDO queryMenuById(Long id);
 
+    MenuDO queryMenuByEname(String ename);
+
     int addMenu(MenuDO menuDO);
 
     int batchAddMenu(List<MenuDO> list);

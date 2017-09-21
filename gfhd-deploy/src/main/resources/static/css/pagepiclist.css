@@ -1,7 +1,7 @@
 
 /*case*/
 .case { border: 1px solid #ddd; border-radius: 10px; margin-bottom: 40px; padding: 39px 40px 55px; overflow: hidden;}
-.case ul { width: 972px; margin:40px -27px; overflow: hidden;}
+.case ul { width: 1000px;height: 420px; margin:40px -27px; overflow: auto;}
 .case li { float: left; width: 270px; overflow: hidden; margin:0 27px 30px;}
 .case li h2 { margin-top: 10px; color: #904400; font:normal 16px/16px "microsoft yahei";}
 .case li h2:after { content: ""; width: 0; height: 0; margin-top: 3px; margin-right: 5px; display: block; float: left; border-style: solid; border-width: 5px; border-color: transparent transparent transparent #904400; }

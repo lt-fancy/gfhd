@@ -1,13 +1,15 @@
 /**
  * Created by fingertap on 2017/9/16.
  */
+var path = window.document.location.href;
+var pathName=window.document.location.pathname;
 function getContextPath() {
-    var path = window.document.location.href;
-    var pathName=window.document.location.pathname;
-    var pos=path.indexOf(pathName);
     //获取主机地址，如： http://localhost:8083
-    var localhostPaht=path.substring(0,pos);
+    var localhostPaht=path.substring(0,getContextPosition);
     return localhostPaht;
+}
+function getContextPosition() {
+    return pathName;
 }
 function getFirstMenu(ename) {
     var menu = '';
@@ -24,6 +26,22 @@ function getFirstMenu(ename) {
     });
     return menu;
 }
+function getMenuByEname(ename) {
+    var menu = '';
+    $.ajax({
+        type : "get",
+        url : "menu/getMenuByEname",
+        data : "ename=" + ename,
+        async : false,
+        success : function(result){
+            if(result.code==0){
+                menu = result.data;
+            }
+        }
+    });
+    return menu;
+}
+
 function getTextByMenuEname(ename) {
     var content = '';
     $.ajax({

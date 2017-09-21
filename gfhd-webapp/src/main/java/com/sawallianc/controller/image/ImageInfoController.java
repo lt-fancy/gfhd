@@ -31,13 +31,6 @@ public class ImageInfoController {
             LOGGER.error("[getTextByMenuEname] request parameter ename is blank");
             return Result.failResult();
         }
-        List<ImageInfoDO> list = imageService.getImageByEname(ename);
-        if(CollectionUtils.isEmpty(list)){
-            List<ImageInfoDO> result = Lists.newArrayListWithCapacity(1);
-            ImageInfoDO imageInfoDO = new ImageInfoDO();
-            result.add(imageInfoDO);
-            return Result.getSuccessResult(result);
-        }
-        return Result.getSuccessResult(list);
+        return Result.getSuccessResult(imageService.getImageByEname(ename));
     }
 }

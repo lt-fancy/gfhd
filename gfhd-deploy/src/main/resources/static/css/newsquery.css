@@ -22,7 +22,7 @@
 .search-btn button{ position:relative; width:35px; height:31px; border:none; background:url(../images/searchInput.jpg) no-repeat right; cursor:pointer; text-indent:-999em; }
 
 
-.shop_select { background:#e5e5e5; padding:8px 13px; height:48px;}
+.shop_select { background:#e5e5e5; padding:8px 13px; height:16px;}
 .shop_select p { float: left; color: #626262; font:normal 14px/31px 'microsoft yahei',Verdana, Arial;}
 
 .select_box{width:125px;height:31px;}

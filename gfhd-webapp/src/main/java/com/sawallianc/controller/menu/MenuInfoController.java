@@ -33,4 +33,13 @@ public class MenuInfoController extends WebAdvice{
         }
         return Result.getSuccessResult(list.get(0));
     }
+
+    @GetMapping("getMenuByEname")
+    @ResponseBody
+    public Result getMenuByEname(String ename){
+        if(StringUtils.isBlank(ename)){
+            return Result.failResult();
+        }
+        return Result.getSuccessResult(menuService.queryMenuByEname(ename));
+    }
 }
