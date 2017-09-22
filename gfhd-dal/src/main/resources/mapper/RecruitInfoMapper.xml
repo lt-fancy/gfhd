@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.sawallianc.dao.RecruitInfoDAO">
+    <resultMap id="listMap" type="com.sawallianc.module.RecruitInfoDO">
+        <id property="id" column="id"/>
+        <result property="menuCname" column="menu_cname"/>
+        <result property="menuEname" column="menu_ename"/>
+        <result property="recruitTitle" column="recruit_title"/>
+        <result property="recruitContent" column="recruit_content"/>
+        <result property="recruitDepartment" column="recruit_department"/>
+        <result property="gmtCreated" column="gmt_created"/>
+        <result property="gmtModified" column="gmt_modified"/>
+        <result property="isDeleted" column="is_deleted"/>
+    </resultMap>
+
+    <sql id="baseList">
+        id,menu_cname,menu_ename,recruit_title,recruit_content,recruit_department,gmt_modified,is_deleted,gmt_created
+    </sql>
+
+    <select id="queryAll" resultMap="listMap">
+        select <include refid="baseList"/>
+        from recruit_info
+        where is_deleted=0
+    </select>
+
+    <select id="getById" resultMap="listMap">
+        select <include refid="baseList"/>
+        from recruit_info
+        where id=#{id}
+    </select>
+</mapper>

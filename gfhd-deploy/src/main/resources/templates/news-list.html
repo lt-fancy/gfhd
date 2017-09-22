@@ -5,7 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=11;IE=9;IE=8;IE=7"/>
     <title>关于我们-某某股权投资基金有限公司</title>
     <link rel="shortcut icon" href="http://demo.weboss.hk/w062/base/pics/favorite.ico"/>
-    <link rel="stylesheet" type="text/css" th:href="@{/css/htmleaf-demo.css}"/>
     <link rel="stylesheet" type="text/css" th:href="@{/css/common.css}"/>
     <link rel="stylesheet" type="text/css" th:href="@{/css/common2.css}"/>
     <script th:src="@{/js/jquery-3.2.1.min.js}"></script>
@@ -25,26 +24,13 @@
             <div id='pdv_17298' class="pdv_class"
                  style="width:1002px;height:450px;top:0px;left:0px; z-index:3">
                 <div id='spdv_17298' class="pdv_top" style="overflow:hidden;width:100%;height:100%">
-                    <div class="pdv_border" style="border: 0px; height: 450px;">
-                        <link href="css/advsglobalpic2.css" rel="stylesheet" type="text/css"/>
-                        <script type="text/javascript" src="js/advsglobalpic2.js"></script>
-
-                        <div id="advsexDiv" style="background:url(./images/1505220326.jpg) center top no-repeat"><img
-                                src="./images/advsglobalpic2.png"/></div>
-
-                    </div>
                 </div>
             </div>
         </div>
 
-        <!-- 二级下拉菜单16 -->
-
         <div id='pdv_17299' class="pdv_class" style="width:100%; height:101px;top:0px;left:0px;  z-index:4">
             <div id='spdv_17299' class="pdv_top" style="overflow:hidden;width:100%;height:100%">
                 <div class="pdv_border" style="border: 0px; height: 101px;">
-                    <style>.header {
-                        position: fixed;
-                    }</style>
                     <div class="header">
                         <div class="wrap clearfix">
                             <h1 class="logo"><a href="http://demo.weboss.hk/w062/" title="">
@@ -63,9 +49,6 @@
     <div id="content"
          style="width: 1002px; height: 1728px; background: url(./images/c.jpg) 50% 0% repeat-x transparent; margin: 0px auto;">
 
-
-        <!-- 文章翻页检索 -->
-
         <div id='pdv_17303' class="pdv_class"
              style="width: 1002px; height: 1456px; top: 90px; left: 0px; z-index: 1;">
             <div id='spdv_17303' class="pdv_content" style="overflow:visible;width:100%;">
@@ -80,14 +63,12 @@
                         <ul id="list-total">
                             <li th:each="list,listStat:${lists}">
                                 <a th:id="'list-image'+${list.id}" style="cursor: pointer" th:value="${list.id}">
-                                    <img src="./images/1365417851.jpg" width="251" height="127"/></a>
+                                    <img th:src="'./images/'+${list.imageUri}" width="251" height="127"/></a>
                                 <div class="text">
                                     <h2><a th:id="'list-title'+${list.id}" style="cursor: pointer" th:text="${list.listTitle}"></a></h2>
                                     <span th:text="${#strings.substring(list.gmtModified,0,10)}"></span>
-                                    <!--<p th:text="${#strings.substring(list.listContent,0,50)+'...'}"></p>-->
                                     <p th:if="${#strings.length(list.listContent)} gt 163" th:text="${#strings.substring(list.listContent,0,163)}+'...'"></p>
                                     <p th:if="${#strings.length(list.listContent)} lt 163" th:text="${list.listContent}"></p>
-                                    <!--<p th:text="${#strings.length(list.listContent)} gt 50?#string.substring(list.listContent,0,50):list.listContent}"></p>-->
                                     <a th:id="'list-more'+${list.id}" style="cursor: pointer" class="more">READ MORE</a>
                                 </div>
                             </li>
@@ -174,8 +155,8 @@
                 <div class="pdv_border" style="border: 0px; height: 29px;">
                     <div style="width:100%;text-align:center;font:12px/20px Arial, Helvetica, sans-serif">
                         <p align="center">
-                            <span style="color:#FFFFFF;line-height:2;">CopyRight © 2014-2018 All Rights Reserved &nbsp;&nbsp;</span><span
-                                style="color:#FFFFFF;line-height:2;">沪ICP备123456789号</span>
+                            <span id="copyright" style="color:#FFFFFF;line-height:2;"></span><span id="foot"
+                                style="color:#FFFFFF;line-height:2;"></span>
                         </p>
                     </div>
                 </div>
@@ -211,6 +192,8 @@
         var subName = getFirstMenu(name);
         $("#sub-title").html(subName.menuCname);
         $("#hotline").html(getCommonByEname("hotline"));
+        $("#foot").html(getCommonByEname("foot"));
+        $("#copyright").html(getCommonByEname("copyright"));
         $("#weixin").attr('src','./images/'+getCommonByEname("weixin"));
     });
     $("#menus").find('li').find('a').click(function () {

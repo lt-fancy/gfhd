@@ -5,14 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=11;IE=9;IE=8;IE=7"/>
     <title>关于我们-某某股权投资基金有限公司</title>
     <link rel="shortcut icon" href="http://demo.weboss.hk/w062/base/pics/favorite.ico"/>
-    <!--<link rel="stylesheet" type="text/css" th:href="@{/css/htmleaf-demo.css}"/>-->
     <link rel="stylesheet" type="text/css" th:href="@{/css/common.css}"/>
     <link rel="stylesheet" type="text/css" th:href="@{/css/common2.css}"/>
-    <style type="text/css">
-        .main-menu{
-            color: #635947;
-        }
-    </style>
     <script th:src="@{/js/jquery-3.2.1.min.js}"></script>
     <script th:src="@{/js/jquery.SuperSlide.2.1.js}"></script>
     <script th:src="@{/js/base.js}"></script>
@@ -26,21 +20,18 @@
 <div id="contain" style=" background:transparent;margin:0px auto;padding:0px">
 
     <div id="top" style="height: 450px; background: none;">
-
-
-        <!-- 全站通栏图片广告 -->
         <div style="margin:0 auto;position:relative;width:1002px;">
             <div id="pdv_17276" class="pdv_class"
                  style="width:1002px;height:450px;top:0px;left:0px; z-index:3">
                 <div id="spdv_17276" class="pdv_top" style="overflow:hidden;width:100%;height:100%">
-                    <div class="pdv_border" style="border: 0px; height: 450px;">
-                        <link href="css/advsglobalpic2.css" rel="stylesheet" type="text/css"/>
-                        <script type="text/javascript" src="js/advsglobalpic2.js"></script>
+                    <!--<div class="pdv_border" style="border: 0px; height: 450px;">-->
+                        <!--<link href="css/advsglobalpic2.css" rel="stylesheet" type="text/css"/>-->
+                        <!--<script type="text/javascript" src="js/advsglobalpic2.js"></script>-->
 
-                        <div id="advsexDiv" style="background:url(./images/1505220231.png) center top no-repeat"><img
-                                src="./images/advsglobalpic2.png"/></div>
+                        <!--<div id="advsexDiv" style="background:url(./images/1505220231.png) center top no-repeat"><img-->
+                                <!--src="./images/advsglobalpic2.png"/></div>-->
 
-                    </div>
+                    <!--</div>-->
                 </div>
             </div>
         </div>
@@ -82,8 +73,11 @@
                         <div id="pagecontent" class="page_content">
                             <div class="tittle" style="margin-bottom:20px;height:42px;font-size:24px;color:#CABA7C;" id="sub-title">
                             </div>
-                            <img style="margin: 0px 20px 5px 0px; float: left; display: block;" border="0" alt=""
-                                  id="sub-image"/><p id="sub-content" style="height: 224px;width: 940px;overflow: auto">
+                            <div style="text-align:center;">
+                            <img style="line-height: 1.5; display: inline;" alt=""
+                                  id="sub-image"/><span style="line-height:1.5;"></span>
+                            </div>
+                                <p id="sub-content" style="height: 224px;width: 940px;overflow: auto">
                         </p>
                         </div>
                         <script>
@@ -134,20 +128,6 @@
                             <h2>客服热线</h2>
                             <p id="hotline">010-64015132,010-84045828</p>
                         </div>
-                        <!--<div class="qxjj">-->
-                            <!--<a>-->
-                                <!--<img src="./images/code2.png" width="50" height="48"/>-->
-                                <!--<h2>我们的APP</h2>-->
-                                <!--<p>马上就来啦</p>-->
-                            <!--</a>-->
-                        <!--</div>-->
-                        <!--<div class="m-wb">-->
-                            <!--<a href="http://demo.weboss.hk/w062/" target="_blank">-->
-                                <!--<img src="./images/img-3.jpg" alt=""/>-->
-                                <!--<h2>我们微博</h2>-->
-                                <!--<p>快来关注我们微博</p>-->
-                            <!--</a>-->
-                        <!--</div>-->
                         <div class="m-wx">
                             <img src="./images/weixin.jpg" width="90" height="90" id="weixin"/>
                             <div class="text">
@@ -166,13 +146,13 @@
 
         <!-- 底部信息编辑区 -->
 
-        <div id="pdv_17273" class="pdv_class" title="脚注信息" style="width:1002px;height:29px;top:5px;left:0px; z-index:5">
+        <div id="pdv_17273" class="pdv_class" style="width:1002px;height:29px;top:5px;left:0px; z-index:5">
             <div id="spdv_17273" class="pdv_bottom" style="overflow:hidden;width:100%;height:100%">
                 <div class="pdv_border" style="border: 0px; height: 29px;">
                     <div style="width:100%;text-align:center;font:12px/20px Arial, Helvetica, sans-serif">
                         <p align="center">
-                            <span style="color:#FFFFFF;line-height:2;">CopyRight © 2014-2018 All Rights Reserved &nbsp;&nbsp;</span><span
-                                style="color:#FFFFFF;line-height:2;">沪ICP备123456789号</span>
+                            <span id="copyright" style="color:#FFFFFF;line-height:2;">CopyRight © 2014-2018 All Rights Reserved &nbsp;&nbsp;</span><span id="foot"
+                                style="color:#FFFFFF;line-height:2;"></span>
                         </p>
                     </div>
                 </div>
@@ -209,6 +189,8 @@
         $("#sub-title").html(subName.menuCname);
         $("#sub-content").html(getTextByMenuEname(subName.menuEname));
         $("#hotline").html(getCommonByEname("hotline"));
+        $("#foot").html(getCommonByEname("foot"));
+        $("#copyright").html(getCommonByEname("copyright"));
         $("#weixin").attr('src','./images/'+getCommonByEname("weixin"));
     });
     <!--主标题-->

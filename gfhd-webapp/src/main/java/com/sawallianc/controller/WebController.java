@@ -4,12 +4,10 @@ import com.github.pagehelper.PageInfo;
 import com.sawallianc.advice.WebAdvice;
 import com.sawallianc.annotation.FrontModel;
 import com.sawallianc.bo.ListInfoBO;
+import com.sawallianc.bo.RecruitInfoBO;
 import com.sawallianc.entity.Result;
 import com.sawallianc.module.MenuDO;
-import com.sawallianc.service.ImageService;
-import com.sawallianc.service.ListService;
-import com.sawallianc.service.MenuService;
-import com.sawallianc.service.TextService;
+import com.sawallianc.service.*;
 import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
@@ -40,6 +38,9 @@ public class WebController extends WebAdvice {
 
     @Autowired
     private TextService textService;
+
+    @Autowired
+    private RecruitService recruitService;
 
     @GetMapping("page")
     public String page(Model model,@RequestParam(defaultValue = "1") Integer pageNum, @RequestParam(defaultValue = "3") Integer pageSize) {
@@ -136,10 +137,36 @@ public class WebController extends WebAdvice {
         return "biz";
     }
 
-    @GetMapping("recruit")
+    @GetMapping({"recruit","recruit-list"})
     @FrontModel
-    public String recruit(Model model) {
-        return "recruit";
+    public String recruitList(Model model,@RequestParam(defaultValue = "1")Integer pageNum,@RequestParam(defaultValue = "5")Integer pageSize) {
+        PageInfo<RecruitInfoBO> pageInfo = recruitService.pageQueryAll(pageNum, pageSize);
+        model.addAttribute("lists",pageInfo.getList());
+        //获得当前页
+        model.addAttribute("pageNum", pageInfo.getPageNum());
+        //获得一页显示的条数
+        model.addAttribute("pageSize", pageInfo.getPageSize());
+        //是否是第一页
+        model.addAttribute("isFirstPage", pageInfo.isIsFirstPage());
+        //获得总页数
+        model.addAttribute("totalPages", pageInfo.getPages());
+        //是否是最后一页
+        model.addAttribute("isLastPage", pageInfo.isIsLastPage());
+        model.addAttribute("totalSizes", pageInfo.getTotal());
+        return "recruit-list";
+    }
+
+    @GetMapping("recruit-detail")
+    @FrontModel
+    public String recruitDetail(Model model,@RequestParam Integer id) {
+        model.addAttribute("info",recruitService.getById(Long.parseLong(id+"")));
+        return "recruit-detail";
+    }
+
+    @GetMapping("recruit-process")
+    @FrontModel
+    public String recruitProcess(Model model) {
+        return "recruit-process";
     }
 
     @GetMapping("contact")

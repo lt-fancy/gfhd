@@ -9,7 +9,7 @@ function getContextPath() {
     return localhostPaht;
 }
 function getContextPosition() {
-    return pathName;
+    return pathName.replace("/","");
 }
 function getFirstMenu(ename) {
     var menu = '';

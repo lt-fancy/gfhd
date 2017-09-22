@@ -31,16 +31,15 @@
         <div id="pdv_17375" class="pdv_class" style="width:100%; height:101px;top:0px;left:0px;  z-index:4">
             <div id="spdv_17375" class="pdv_top" style="overflow:hidden;width:100%;height:100%">
                 <div class="pdv_border" style="border: 0px; height: 101px;">
-                    <style>.header {
-                        position: fixed;
-                    }</style>
                     <div class="header">
                         <div class="wrap clearfix">
                             <h1 class="logo"><a href="http://demo.weboss.hk/w062/" title="">
                                 <img src="./images/1505207849.png"/></a></h1>
                             <div class="nav">
                                 <ul class="clearfix" id="menus">
-                                    <li th:each="menu,menuStat:${menus}"><a style="cursor: pointer" th:text="${menu.menuCname}" th:id="${menu.menuEname}"></a></li>
+                                    <li th:each="menu,menuStat:${menus}"><a style="cursor: pointer"
+                                                                            th:text="${menu.menuCname}"
+                                                                            th:id="${menu.menuEname}"></a></li>
                                 </ul>
                             </div>
                         </div>
@@ -59,7 +58,10 @@
                     <div class="sidebar">
                         <div class="wrap">
                             <ul id="child-menu">
-                                <li class="dq" th:each="child,childStat:${children}"><a style="cursor: pointer" th:text="${child.menuCname}" th:value="${child.menuEname}"></a></li>
+                                <li class="dq" th:each="child,childStat:${children}"><a style="cursor: pointer"
+                                                                                        th:text="${child.menuCname}"
+                                                                                        th:value="${child.menuEname}"></a>
+                                </li>
                             </ul>
                         </div>
                     </div>
@@ -73,43 +75,52 @@
              style="width: 1002px; height: 693px; top: 89px; left: 0px; z-index: 2;">
             <div id="spdv_17377" class="pdv_content" style="overflow:visible;width:100%;">
                 <div class="pdv_border" style="border:0">
-                    <link href="css/pagepiclist.css" rel="stylesheet" type="text/css"/>
-
-                    <div class="case">
-                        <div class="tittle" style="margin-bottom:20px;height:42px;font-size:24px;color:#CABA7C;">投资领域
+                    <link href="./css/productquery.css" rel="stylesheet" type="text/css"/>
+                    <div class="product">
+                        <div class="tittle"
+                             style="margin-bottom:5px;height:32px;font-size:20px;color:#CABA7C;font-weight:bold;" id="sub-title">
                         </div>
-                        <ul>
-
-                            <li><a href="http://demo.weboss.hk/w062/page/Invest/?97.html">
-                                <img src="./images/1505185354.jpg" width="270" height="180" alt=""/>
-                                <h2>教育</h2>
-                            </a></li>
-
-                            <li><a href="http://demo.weboss.hk/w062/page/Invest/?98.html">
-                                <img src="./images/1505185399.jpg" width="270" height="180" alt=""/>
-                                <h2>旅游</h2>
-                            </a></li>
-
-                            <li><a href="http://demo.weboss.hk/w062/page/Invest/?99.html">
-                                <img src="./images/1505185445.jpg" width="270" height="180" alt=""/>
-                                <h2>医疗</h2>
-                            </a></li>
-
-                            <li><a href="http://demo.weboss.hk/w062/page/Invest/?100.html">
-                                <img src="./images/1505185489.jpg" width="270" height="180" alt=""/>
-                                <h2>能源环保</h2>
-                            </a></li>
-
-                            <li><a href="http://demo.weboss.hk/w062/page/Invest/?101.html">
-                                <img src="./images/1505185536.jpg" width="270" height="180" alt=""/>
-                                <h2>养老</h2>
-                            </a></li>
-
-                            <li><a href="http://demo.weboss.hk/w062/page/Invest/?102.html">
-                                <img src="./images/1505185570.jpg" width="270" height="180" alt=""/>
-                                <h2>传媒</h2>
-                            </a></li>
+                        <form id="searchform">
+                            <div class="shop_select">
+                            </div>
+                        </form>
+                        <div class="pro-tittle">
+                            <div class="mc">职位名称</div>
+                            <div class="lx">职位部门</div>
+                            <div class="sj">发布时间</div>
+                        </div>
+                        <ul class="pro-list" id="list-total">
+                            <li th:each="recruit,recruitStat:${lists}">
+                                <div class="mc"><a th:id="'recruit_id'+${recruit.id}" th:value="${recruit.id}" th:text="${recruit.recruitTitle}" style="cursor: pointer" href="#"></a>
+                                </div>
+                                <div th:text="${recruit.recruitDepartment}" class="lx"></div>
+                                <div class="sj" th:text="${#strings.substring(recruit.gmtModified,0,10)}"></div>
+                            </li>
                         </ul>
+                        <div id="showpages" style="float:right">
+                            <div id="pagesinfo" th:text="'共'+${totalSizes}+'条 每页'+${pageSize}+'条 页次:'+${pageNum}+'/'+${totalPages}"></div>
+                            <div id="pages">
+                                <ul>
+                                    <li th:if="${pageNum!=1}" class="pbutton"><a style="cursor: pointer" th:onclick="'javascript:page('+1+','+${pageSize}+');'">首页</a></li>
+                                    <li th:if="${pageNum==1}" class="pbutton"><a style="cursor: not-allowed">首页</a></li>
+                                    <li th:if="${pageNum==1}" class="pbutton" style="cursor: not-allowed">上一页</li>
+                                    <li th:if="${pageNum!=1}" class="pbutton" style="cursor: pointer" th:onclick="'javascript:page('+${pageNum-1}+','+${pageSize}+');'">上一页</li>
+                                    <li class="pagesnow" style="cursor: pointer" th:onclick="'javascript:page('+${pageNo}+','+${pageSize}+');'" th:each="pageNo : ${#numbers.sequence(1, totalPages)}" th:text="${pageNo}"></li>
+                                    <li th:if="${pageNum!=totalPages}" class="pbutton" style="cursor: pointer" th:onclick="'javascript:page('+${pageNum+1}+','+${pageSize}+');'">下一页</li>
+                                    <li th:if="${pageNum==totalPages}" class="pbutton" style="cursor: not-allowed">下一页</li>
+                                    <li class="opt"><select th:onchange="'javascript:page('+this.options[this.selectedIndex].value+','+${pageSize}+');'">
+                                        <option th:if="${pageNo!=pageNum}" th:each="pageNo : ${#numbers.sequence(1, totalPages)}" th:text="'第'+${pageNo}+'页'" th:value="${pageNo}"
+                                                selected="">
+                                        </option>
+                                        <option th:if="${pageNo==pageNum}" th:each="pageNo : ${#numbers.sequence(1, totalPages)}" th:text="'第'+${pageNo}+'页'" th:value="${pageNo}"
+                                                selected="selected">
+                                        </option>
+                                    </select></li>
+                                    <li th:if="${pageNum==totalPages}" class="pbutton"><a style="cursor: not-allowed">尾页</a></li>
+                                    <li th:if="${pageNum!=totalPages}" class="pbutton"><a style="cursor: pointer" th:onclick="'javascript:page('+${totalPages}+','+${pageSize}+');'">尾页</a></li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -179,19 +190,42 @@
 <div id="advsex6"></div>
 
 <script th:inline="javascript">
+    //<![CDATA[
     $(window).load(function () {
         var name = [[${menuEname}]];
-        $("#"+name).attr('style','cursor:pointer;color:#CABA7C');
-        $("#"+name).siblings().attr('style','cursor:pointer;');
+        $("#" + name).attr('style', 'cursor:pointer;color:#CABA7C');
+        $("#" + name).siblings().attr('style', 'cursor:pointer;');
+        var subName = getFirstMenu(name);
+        $("#sub-title").html(subName.menuCname);
         $("#hotline").html(getCommonByEname("hotline"));
         $("#foot").html(getCommonByEname("foot"));
         $("#copyright").html(getCommonByEname("copyright"));
-        $("#weixin").attr('src','./images/'+getCommonByEname("weixin"));
+        $("#weixin").attr('src', './images/' + getCommonByEname("weixin"));
     });
     $("#menus").find('li').find('a').click(function () {
         var i = $(this).attr('id');
-        window.location.href=getContextPath()+"/"+i;
+        window.location.href = getContextPath() + "/" + i;
     });
+    <!--子标题-->
+    $("#child-menu").find('li').find('a').click(function () {
+        var title = $(this).text();
+        var value = $(this).attr('value');
+        $("#sub-title").html(title);
+        var href = getContextPath()+"/"+value;
+        window.location.href=href;
+    });
+    $("#list-total").find('li').each(function (i,v) {
+        var _a = $(v).find('a');
+        var id = $(_a).attr('value');
+        var href = getContextPath()+"/recruit-detail?id="+id;
+        $("#recruit_id"+(i+1)).attr('href',href);
+    })
+    function page(pageNum,pageSize) {
+        var suffix = "/news?pageNum="+pageNum+"&pageSize="+pageSize;
+        window.location.href=getContextPath()+suffix;
+
+    }
+    //]]>
 </script>
 </body>
 </html>

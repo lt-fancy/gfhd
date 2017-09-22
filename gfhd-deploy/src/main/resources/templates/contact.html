@@ -5,7 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=11;IE=9;IE=8;IE=7"/>
     <title>关于我们-某某股权投资基金有限公司</title>
     <link rel="shortcut icon" href="http://demo.weboss.hk/w062/base/pics/favorite.ico"/>
-    <link rel="stylesheet" type="text/css" th:href="@{/css/htmleaf-demo.css}"/>
     <link rel="stylesheet" type="text/css" th:href="@{/css/common.css}"/>
     <link rel="stylesheet" type="text/css" th:href="@{/css/common2.css}"/>
     <script th:src="@{/js/jquery-3.2.1.min.js}"></script>
@@ -17,44 +16,19 @@
     <script th:src="@{/js/base/context.js}"></script>
 </head>
 <body style="background:transparent">
-
-<script>
-    var PDV_PAGEID = '462';
-    var PDV_RP = '../../';
-    var PDV_COLTYPE = 'page';
-    var PDV_PAGENAME = 'service_contact';
-</script>
-
 <div id="contain" style=" background:transparent;margin:0px auto;padding:0px">
-
     <div id="top" style="height: 450px; background: none;">
-
-
-        <!-- 全站通栏图片广告 -->
         <div style="margin:0 auto;position:relative;width:1002px;">
             <div id="pdv_17348" class="pdv_class"
                  style="width:1002px;height:450px;top:0px;left:0px; z-index:3">
                 <div id="spdv_17348" class="pdv_top" style="overflow:hidden;width:100%;height:100%">
-                    <div class="pdv_border" style="border: 0px; height: 450px;">
-                        <link href="css/advsglobalpic2.css" rel="stylesheet" type="text/css"/>
-                        <script type="text/javascript" src="js/advsglobalpic2.js"></script>
-
-                        <div id="advsexDiv" style="background:url(./images/1505220177.jpg) center top no-repeat"><img
-                                src="./images/advsglobalpic2.png"/></div>
-
-                    </div>
                 </div>
             </div>
         </div>
 
-        <!-- 二级下拉菜单16 -->
-
         <div id="pdv_17349" class="pdv_class" style="width:100%; height:101px;top:0px;left:0px;  z-index:4">
             <div id="spdv_17349" class="pdv_top" style="overflow:hidden;width:100%;height:100%">
                 <div class="pdv_border" style="border: 0px; height: 101px;">
-                    <style>.header {
-                        position: fixed;
-                    }</style>
                     <div class="header">
                         <div class="wrap clearfix">
                             <h1 class="logo"><a href="http://demo.weboss.hk/w062/" title="">
@@ -91,30 +65,11 @@
                             邮编：100007<br />
                             </p>
                         </div>
-                        <script>
-
-                            $(window).load(function () {
-                                $("#pagecontent").find("img").hide();
-                                var w = $("#pagecontent")[0].offsetWidth;
-                                $("#pagecontent").find("img").each(function () {
-                                    $(this).show();
-                                    if (this.offsetWidth > w) {
-                                        this.style.width = w + "px";
-                                    }
-                                });
-
-                            });
-
-                        </script>
-
                     </div>
                 </div>
 
             </div>
         </div>
-
-        <!-- 网页标题(菜单) -->
-
         <div id="pdv_17346" class="pdv_class" style="width:1002px;height:58px;top:0px;left:0px; z-index:2">
             <div id="spdv_17346" class="pdv_content" style="overflow:hidden;width:100%;height:100%">
                 <div class="pdv_border" style="border: 0px; height: 58px;">
@@ -161,8 +116,8 @@
                 <div class="pdv_border" style="border: 0px; height: 29px;">
                     <div style="width:100%;text-align:center;font:12px/20px Arial, Helvetica, sans-serif">
                         <p align="center">
-                            <span style="color:#FFFFFF;line-height:2;">CopyRight © 2014-2018 All Rights Reserved &nbsp;&nbsp;</span><span
-                                style="color:#FFFFFF;line-height:2;">沪ICP备123456789号</span>
+                            <span id="copyright" style="color:#FFFFFF;line-height:2;"></span><span id="foot"
+                                style="color:#FFFFFF;line-height:2;"></span>
                         </p>
                     </div>
                 </div>
@@ -196,6 +151,8 @@
         $("#"+name).siblings().attr('style','cursor:pointer;');
         $("#hotline").html(getCommonByEname("hotline"));
         $("#weixin").attr('src','./images/'+getCommonByEname("weixin"));
+        $("#foot").html(getCommonByEname("foot"));
+        $("#copyright").html(getCommonByEname("copyright"));
         var content = getTextByMenuEname(name);
         $("#contact-text").html(content);
     });

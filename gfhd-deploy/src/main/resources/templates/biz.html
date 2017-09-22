@@ -5,7 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=11;IE=9;IE=8;IE=7"/>
     <title>关于我们-某某股权投资基金有限公司</title>
     <link rel="shortcut icon" href="http://demo.weboss.hk/w062/base/pics/favorite.ico"/>
-    <link rel="stylesheet" type="text/css" th:href="@{/css/htmleaf-demo.css}"/>
     <link rel="stylesheet" type="text/css" th:href="@{/css/common.css}"/>
     <link rel="stylesheet" type="text/css" th:href="@{/css/common2.css}"/>
     <script th:src="@{/js/jquery-3.2.1.min.js}"></script>
@@ -17,32 +16,12 @@
     <script th:src="@{/js/base/context.js}"></script>
 </head>
 <body style="background:transparent">
-
-<script>
-    var PDV_PAGEID = '275';
-    var PDV_RP = '../../';
-    var PDV_COLTYPE = 'product';
-    var PDV_PAGENAME = 'query';
-</script>
-
 <div id="contain" style=" background:transparent;margin:0px auto;padding:0px">
-
     <div id="top" style="height: 450px; background: none;">
-
-
-        <!-- 全站通栏图片广告 -->
         <div style="margin:0 auto;position:relative;width:1002px;">
-            <div id="pdv_17329" class="pdv_class" title="广告位"
+            <div id="pdv_17329" class="pdv_class"
                  style="width:1002px;height:450px;top:0px;left:0px; z-index:3">
                 <div id="spdv_17329" class="pdv_top" style="overflow:hidden;width:100%;height:100%">
-                    <div class="pdv_border" style="border: 0px; height: 450px;">
-                        <link href="css/advsglobalpic2.css" rel="stylesheet" type="text/css"/>
-                        <script type="text/javascript" src="js/advsglobalpic2.js"></script>
-
-                        <div id="advsexDiv" style="background:url(./images/1505220037.jpg) center top no-repeat"><img
-                                src="./images/advsglobalpic2.png"/></div>
-
-                    </div>
                 </div>
             </div>
         </div>
@@ -52,9 +31,6 @@
         <div id="pdv_17327" class="pdv_class" style="width:100%; height:101px;top:0px;left:0px;  z-index:4">
             <div id="spdv_17327" class="pdv_top" style="overflow:hidden;width:100%;height:100%">
                 <div class="pdv_border" style="border: 0px; height: 101px;">
-                    <style>.header {
-                        position: fixed;
-                    }</style>
                     <div class="header">
                         <div class="wrap clearfix">
                             <h1 class="logo"><a href="http://demo.weboss.hk/w062/" title="">
@@ -76,26 +52,14 @@
 
         <!-- 产品分类（列表） -->
 
-        <div id="pdv_17331" class="pdv_class" title="产品分类" style="width:1002px;height:63px;top:0px;left:0px; z-index:1">
+        <div id="pdv_17331" class="pdv_class" style="width:1002px;height:63px;top:0px;left:0px; z-index:1">
             <div id="spdv_17331" class="pdv_content" style="overflow:hidden;width:100%;height:100%">
                 <div class="pdv_border" style="border: 0px; height: 63px;">
                     <link href="css/productclass.css" rel="stylesheet" type="text/css"/>
                     <div class="sidebar">
                         <div class="wrap">
                             <ul id="child-menu">
-
-                                <li class="dq"><a href="http://demo.weboss.hk/w062/product/class/?115.html">产品系列之一</a>
-                                </li>
-
-                                <li class="dq"><a href="http://demo.weboss.hk/w062/product/class/?116.html">产品系列之二</a>
-                                </li>
-
-                                <li class="dq"><a href="http://demo.weboss.hk/w062/product/class/?74.html">产品系列之三</a>
-                                </li>
-
-                                <li class="dq"><a href="http://demo.weboss.hk/w062/product/class/?124.html">产品案例展示</a>
-                                </li>
-
+                                <li class="dq" th:each="child,childStat:${children}" th:id="${child.menuEname}"><a style="cursor: pointer" th:text="${child.menuCname}"></a></li>
                             </ul>
                         </div>
                     </div>
@@ -105,132 +69,36 @@
 
         <!-- 产品检索搜索 -->
 
-        <div id="pdv_17332" class="pdv_class" title="产品检索"
+        <div id="pdv_17332" class="pdv_class"
              style="width:1002px;height:879px;top:99px;left:0px; z-index:2">
             <div id="spdv_17332" class="pdv_content" style="overflow:visible;width:100%;">
-                <div class="pdv_border" style="border:0">
-                    <link href="css/productquery.css" rel="stylesheet" type="text/css"/>
-                    <div class="product">
-                        <div class="tittle"
-                             style="margin-bottom:5px;height:32px;font-size:20px;color:#CABA7C;font-weight:bold;">产品检索
-                        </div>
-                        <form id="searchform" method="get" action="http://demo.weboss.hk/w062/product/class/index.php">
-                            <div class="shop_select">
-                                <div class="search-form" style="float: left;">
-                                    <div class="search-input-box">
-                                        <input id="key" name="key" onblur="if(this.value == '')this.value='关键字'"
-                                               onfocus="if(this.value == 'Search...')this.value = ''" placeholder="关键字"/>
-                                    </div>
-                                    <div class="search-btn">
-                                        <button type="button" value="" onclick="Search1()">搜索</button>
-                                    </div>
-                                </div>
-
+                <div class="pdv_border" style="margin:0;padding:0;height:100%;border:0px  solid;background:;">
+                    <div style="padding:0px">
+                        <link href="css/pagecontent.css" rel="stylesheet" type="text/css"/>
+                        <div id="pagecontent" class="page_content">
+                            <div class="tittle" style="margin-bottom:20px;height:42px;font-size:24px;color:#CABA7C;" id="sub-title">
                             </div>
-                        </form>
-                        <div class="pro-tittle">
-                            <div class="mc">产品名称</div>
-                            <div class="lx">产品类型</div>
-                            <div class="sj">发布时间</div>
+                            <div style="text-align:center;">
+                                <img style="line-height: 1.5; display: inline;" alt=""
+                                     id="sub-image"/><span style="line-height:1.5;"></span>
+                            </div>
+                            <p id="sub-content" style="height: 224px;width: 940px;overflow: auto">
+                            </p>
                         </div>
-                        <ul class="pro-list">
+                        <script>
+                            $(window).load(function () {
+                                $("#pagecontent").find("img").hide();
+                                var w = $("#pagecontent")[0].offsetWidth;
+                                $("#pagecontent").find("img").each(function () {
+                                    $(this).show();
+                                    if (this.offsetWidth > w) {
+                                        this.style.width = w + "px";
+                                    }
+                                });
 
-
-                            <li>
-                                <div class="mc"><a href="http://demo.weboss.hk/w062/product/html/?93.html">产品应用案例</a>
-                                </div>
-                                <div class="lx">&nbsp;</div>
-                                <div class="sj">2011-12-28</div>
-                                <a href="http://demo.weboss.hk/w062/product/html/?93.html" class="more"
-                                   style="display: none">查看详情</a>
-                            </li>
-
-                            <li>
-                                <div class="mc"><a href="http://demo.weboss.hk/w062/product/html/?91.html">产品应用案例</a>
-                                </div>
-                                <div class="lx">&nbsp;</div>
-                                <div class="sj">2011-12-28</div>
-                                <a href="http://demo.weboss.hk/w062/product/html/?91.html" class="more"
-                                   style="display: none">查看详情</a>
-                            </li>
-
-                            <li>
-                                <div class="mc"><a href="http://demo.weboss.hk/w062/product/html/?92.html">产品应用案例</a>
-                                </div>
-                                <div class="lx">&nbsp;</div>
-                                <div class="sj">2011-12-28</div>
-                                <a href="http://demo.weboss.hk/w062/product/html/?92.html" class="more"
-                                   style="display: none">查看详情</a>
-                            </li>
-
-                            <li>
-                                <div class="mc"><a href="http://demo.weboss.hk/w062/product/html/?94.html">产品应用案例</a>
-                                </div>
-                                <div class="lx">&nbsp;</div>
-                                <div class="sj">2011-12-28</div>
-                                <a href="http://demo.weboss.hk/w062/product/html/?94.html" class="more"
-                                   style="display: none">查看详情</a>
-                            </li>
-
-                            <li>
-                                <div class="mc"><a href="http://demo.weboss.hk/w062/product/html/?82.html">我的产品名称</a>
-                                </div>
-                                <div class="lx">&nbsp;</div>
-                                <div class="sj">2010-01-14</div>
-                                <a href="http://demo.weboss.hk/w062/product/html/?82.html" class="more"
-                                   style="display: none">查看详情</a>
-                            </li>
-
-                            <li>
-                                <div class="mc"><a href="http://demo.weboss.hk/w062/product/html/?85.html">我的产品名称</a>
-                                </div>
-                                <div class="lx">&nbsp;</div>
-                                <div class="sj">2010-07-20</div>
-                                <a href="http://demo.weboss.hk/w062/product/html/?85.html" class="more"
-                                   style="display: none">查看详情</a>
-                            </li>
-
-                            <li>
-                                <div class="mc"><a href="http://demo.weboss.hk/w062/product/html/?84.html">我的产品名称</a>
-                                </div>
-                                <div class="lx">&nbsp;</div>
-                                <div class="sj">2010-07-20</div>
-                                <a href="http://demo.weboss.hk/w062/product/html/?84.html" class="more"
-                                   style="display: none">查看详情</a>
-                            </li>
-
-                            <li>
-                                <div class="mc"><a href="http://demo.weboss.hk/w062/product/html/?90.html">我的产品名称</a>
-                                </div>
-                                <div class="lx">&nbsp;</div>
-                                <div class="sj">2011-12-28</div>
-                                <a href="http://demo.weboss.hk/w062/product/html/?90.html" class="more"
-                                   style="display: none">查看详情</a>
-                            </li>
-
-                        </ul>
-                        <div class="page"><span>	  <div id="pagesinfo">共8条 每页20条 页次：1/1</div>
-	  <div id="pages">
-          <ul>
-              <li class="pbutton"><a
-                      href="http://demo.weboss.hk/w062/product/class/index.php?page=1&amp;catid=0&amp;myord=uptime&amp;myshownums=&amp;showtj=&amp;author=&amp;key=">首页</a>
-              </li>
-              <li class="pbutton">上一页</li>
-              <li class="pagesnow">1</li>
-              <li class="pbutton">下一页</li>
-              <li class="opt"><select onchange="window.location=this.options[this.selectedIndex].value">
-                  <option value="/w062/product/class/index.php?page=1&amp;catid=0&amp;myord=uptime&amp;myshownums=&amp;showtj=&amp;author=&amp;key="
-                          selected="">第1页
-                  </option>
-              </select></li>
-              <li class="pbutton"><a
-                      href="http://demo.weboss.hk/w062/product/class/index.php?page=1&amp;catid=0&amp;myord=uptime&amp;myshownums=&amp;showtj=&amp;author=&amp;key=">尾页</a>
-              </li>
-          </ul>
-      </div></span></div>
+                            });
+                        </script>
                     </div>
-
-
                 </div>
             </div>
         </div>
@@ -270,8 +138,8 @@
                 <div class="pdv_border" style="border: 0px; height: 29px;">
                     <div style="width:100%;text-align:center;font:12px/20px Arial, Helvetica, sans-serif">
                         <p align="center">
-                            <span style="color:#FFFFFF;line-height:2;">CopyRight © 2014-2018 All Rights Reserved &nbsp;&nbsp;</span><span
-                                style="color:#FFFFFF;line-height:2;">沪ICP备123456789号</span>
+                            <span id="copyright" style="color:#FFFFFF;line-height:2;"></span><span id="foot"
+                                style="color:#FFFFFF;line-height:2;"></span>
                         </p>
                     </div>
                 </div>
@@ -303,12 +171,25 @@
         var name = [[${menuEname}]];
         $("#"+name).attr('style','cursor:pointer;color:#CABA7C');
         $("#"+name).siblings().attr('style','cursor:pointer;');
+        var subName = getFirstMenu(name);
+        $("#sub-image").attr('src','./images/'+getImageByEname(subName.menuEname)[0].imageUri);
+        $("#sub-title").html(subName.menuCname);
+        $("#sub-content").html(getTextByMenuEname(subName.menuEname));
         $("#hotline").html(getCommonByEname("hotline"));
+        $("#foot").html(getCommonByEname("foot"));
+        $("#copyright").html(getCommonByEname("copyright"));
         $("#weixin").attr('src','./images/'+getCommonByEname("weixin"));
     });
     $("#menus").find('li').find('a').click(function () {
         var i = $(this).attr('id');
         window.location.href=getContextPath()+"/"+i;
+    });
+    $("#child-menu").find('li').find('a').click(function () {
+        var title = $(this).text();
+        var id = $(this).parent().attr("id");
+        $("#sub-title").html(title);
+        $("#sub-image").attr('src','./images/'+getImageByEname(id)[0].imageUri);
+        $("#sub-content").html(getTextByMenuEname(id));
     });
 </script>
 </body>

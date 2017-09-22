@@ -14,10 +14,11 @@
         <result property="isDeleted" column="is_deleted"/>
         <result property="author" column="author"/>
         <result property="isHome" column="is_home"/>
+        <result property="imageUri" column="image_uri"/>
     </resultMap>
 
     <sql id="baseList">
-        id,menu_cname,menu_ename,list_title,list_content,gmt_created,gmt_modified,is_deleted,author,is_home
+        id,menu_cname,menu_ename,list_title,list_content,gmt_created,gmt_modified,is_deleted,author,is_home,image_uri
     </sql>
 
     <select id="getListByEname" resultMap="listMap">

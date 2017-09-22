@@ -10,5 +10,6 @@ public class ListInfoDO extends BaseDO{
     private String listTitle;
     private String listContent;
     private String author;
+    private String imageUri;
     private Integer isHome;
 }

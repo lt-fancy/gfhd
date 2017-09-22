@@ -38,7 +38,6 @@
 
         <div id="pdv_17266" class="pdv_class" style="width:100%; height:101px;top:0px;left:0px;  z-index:2">
             <div id="spdv_17266" class="pdv_top" style="overflow:hidden;width:100%;height:100%"><div class="pdv_border" style="border: 0px; height: 101px;">
-                <style>.header {position: fixed;}</style>
                 <div class="header">
                     <div class="wrap clearfix">
                         <h1 class="logo"><a href="#" title="">
@@ -55,9 +54,6 @@
         </div>
     </div>
     <div id="content" style="width: 1002px; height: 400px; background: none; margin: 0px auto;">
-
-
-        <!-- 文章列表 -->
 
         <div id="pdv_17269" class="pdv_class" style="width:511px;height:179px;top:30px;left:0px; z-index:3">
             <div id="spdv_17269" class="pdv_content" style="overflow:hidden;width:100%;height:100%">
@@ -85,15 +81,15 @@
                 <div class="pdv_border" style="border: 0px; height: 200px; padding: 0px; margin: 0px;">
                     <div class="tittle"><h2 th:text="${children[1].menuCname}"><em>/ ABOUT US</em></h2><a id="about-more" href="#" class="more" style="display:inline;">+ more</a></div>
                     <div style="margin:0px;padding:5px">
-                        <span style="line-height:2;"><span th:text="${about.text}" style="color:#505050;font-size:14px;line-height:2;"></span></span>
+                        <span style="line-height:2;">
+                            <span th:if="${#strings.length(about.text)} gt 222" th:text="'&emsp;&emsp;'+${#strings.substring(about.text,0,222)}+'...'" style="color:#505050;font-size:14px;line-height:2;"></span>
+                            <span th:if="${#strings.length(about.text)} lt 222" th:text="'&emsp;&emsp;'+${about.text}" style="color:#505050;font-size:14px;line-height:2;"></span>
+                        </span>
                     </div>
                 </div>
 
             </div>
         </div>
-
-        <!-- 自定义模版 -->
-
         <div id="pdv_17271" class="pdv_class" title="" style="width:1002px;height:154px;top:246px;left:0px; z-index:5">
             <div id="spdv_17271" class="pdv_content" style="overflow:hidden;width:100%;height:100%"><div class="pdv_border" style="border: 0px; height: 154px;"><div class="contant">
                 <div class="m-tel">
@@ -115,14 +111,11 @@
         </div>
     </div>
     <div id="bottom" style="width: 1002px; height: 34px; background: rgb(0, 0, 0);">
-
-
-        <!-- 底部信息编辑区 -->
-
-        <div id="pdv_17272" class="pdv_class" title="脚注信息" style="width:1002px;height:29px;top:5px;left:0px; z-index:6">
+        <div id="pdv_17272" class="pdv_class" style="width:1002px;height:29px;top:5px;left:0px; z-index:6">
             <div id="spdv_17272" class="pdv_bottom" style="overflow:hidden;width:100%;height:100%"><div class="pdv_border" style="border: 0px; height: 29px;"><div style="width:100%;text-align:center;font:12px/20px Arial, Helvetica, sans-serif">
                 <p align="center">
-                    <span style="color:#FFFFFF;line-height:2;">CopyRight © 2014-2018 All Rights Reserved &nbsp;&nbsp;</span><span style="color:#FFFFFF;line-height:2;">沪ICP备123456789号</span>
+                    <span id="copyright" style="color:#FFFFFF;line-height:2;"></span>
+                    <span id="foot" style="color:#FFFFFF;line-height:2;"></span>
                 </p>
             </div>
             </div>
@@ -154,6 +147,8 @@
         $("#"+name).siblings().attr('style','cursor:pointer;');
         $("#hotline").html(getCommonByEname("hotline"));
         $("#weixin").attr('src','./images/'+getCommonByEname("weixin"));
+        $("#foot").html(getCommonByEname("foot"));
+        $("#copyright").html(getCommonByEname("copyright"));
         $('a.newslist').attr('href',getContextPath()+"/news-detail?id="+$('a.newslist').attr('value'));
         $("#news-more").attr('href',getContextPath()+"/news");
         $("#about-more").attr('href',getContextPath()+"/about");
