@@ -25,9 +25,9 @@
 
         <!-- 全站通栏图片广告 -->
         <div style="margin:0 auto;position:relative;width:1002px;">
-            <div class="pdv_class" title="广告位"
+            <div id='pdv_17315' class="pdv_class"
                  style="width:1002px;height:450px;top:0px;left:0px; z-index:3">
-                <div class="pdv_top" style="overflow:hidden;width:100%;height:100%">
+                <div id='spdv_17315' class="pdv_top" style="overflow:hidden;width:100%;height:100%">
                     <div class="pdv_border" style="border: 0px; height: 450px;">
                         <link href="css/advsglobalpic2.css" rel="stylesheet" type="text/css"/>
                         <script type="text/javascript" src="js/advsglobalpic2.js"></script>
@@ -42,8 +42,8 @@
 
         <!-- 二级下拉菜单16 -->
 
-        <div class="pdv_class" style="width:100%; height:101px;top:0px;left:0px;  z-index:4">
-            <div class="pdv_top" style="overflow:hidden;width:100%;height:100%">
+        <div id='pdv_17313' class="pdv_class" style="width:100%; height:101px;top:0px;left:0px;  z-index:4">
+            <div id='spdv_17313' class="pdv_top" style="overflow:hidden;width:100%;height:100%">
                 <div class="pdv_border" style="border: 0px; height: 101px;">
                     <style>.header {
                         position: fixed;
@@ -66,73 +66,14 @@
     <div id="content"
          style="width: 1002px; height: 1728px; background: url(./images/c.jpg) 50% 0% repeat-x transparent; margin: 0px auto;">
 
-
-        <!-- 文章翻页检索 -->
-
-        <div class="pdv_class"
-             style="width: 1002px; height: 1456px; top: 90px; left: 0px; z-index: 1;">
-            <div class="pdv_content" style="overflow:visible;width:100%;">
-                <div class="pdv_border" style="border:0">
-                    <link href="css/newsquery.css" rel="stylesheet" type="text/css"/>
-                    <div class="news">
-                        <div id="sub-title" class="tittle" style="height:42px;font-size:24px;color:#CABA7C;"></div>
-
-                        <form id="searchform">
-                            <div class="shop_select">
-                            </div>
-                        </form>
-                        <ul>
-                            <li th:each="list,listStat:${lists}">
-                                <a href="http://demo.weboss.hk/w062/news/html/?366.html">
-                                    <img src="./images/1365417851.jpg" width="251" height="127"/></a>
-                                <div class="text">
-                                    <h2><a href="http://demo.weboss.hk/w062/news/html/?366.html" th:text="${list.listTitle}"></a></h2>
-                                    <span th:text="${#strings.substring(list.gmtModified,0,10)}"></span>
-                                    <p th:text="${list.listContent}"></p>
-                                    <a href="http://demo.weboss.hk/w062/news/html/?366.html" class="more">READ MORE</a>
-                                </div>
-                            </li>
-                        </ul>
-
-                        <div id="showpages" style="float:right">
-                            <div id="pagesinfo" th:text="'共'+${totalSizes}+'条 每页'+${pageSize}+'条 页次:'+${pageNum}+'/'+${totalPages}"></div>
-                            <div id="pages">
-                                <ul>
-                                    <li th:if="${pageNum!=1}" class="pbutton"><a style="cursor: pointer" th:onclick="'javascript:page('+1+','+${pageSize}+');'">首页</a></li>
-                                    <li th:if="${pageNum==1}" class="pbutton"><a style="cursor: not-allowed">首页</a></li>
-                                    <li th:if="${pageNum==1}" class="pbutton" style="cursor: not-allowed">上一页</li>
-                                    <li th:if="${pageNum!=1}" class="pbutton" style="cursor: pointer" th:onclick="'javascript:page('+${pageNum-1}+','+${pageSize}+');'">上一页</li>
-                                    <li class="pagesnow" style="cursor: pointer" th:onclick="'javascript:page('+${pageNo}+','+${pageSize}+');'" th:each="pageNo : ${#numbers.sequence(1, totalPages)}" th:text="${pageNo}"></li>
-                                    <li th:if="${pageNum!=totalPages}" class="pbutton" style="cursor: pointer" th:onclick="'javascript:page('+${pageNum+1}+','+${pageSize}+');'">下一页</li>
-                                    <li th:if="${pageNum==totalPages}" class="pbutton" style="cursor: not-allowed">下一页</li>
-                                    <li class="opt"><select th:onchange="'javascript:page('+this.options[this.selectedIndex].value+','+${pageSize}+');'">
-                                        <option th:if="${pageNo!=pageNum}" th:each="pageNo : ${#numbers.sequence(1, totalPages)}" th:text="'第'+${pageNo}+'页'" th:value="${pageNo}"
-                                                selected="">
-                                        </option>
-                                        <option th:if="${pageNo==pageNum}" th:each="pageNo : ${#numbers.sequence(1, totalPages)}" th:text="'第'+${pageNo}+'页'" th:value="${pageNo}"
-                                                selected="selected">
-                                        </option>
-                                    </select></li>
-                                    <li th:if="${pageNum==totalPages}" class="pbutton"><a style="cursor: not-allowed">尾页</a></li>
-                                    <li th:if="${pageNum!=totalPages}" class="pbutton"><a style="cursor: pointer" th:onclick="'javascript:page('+${totalPages}+','+${pageSize}+');'">尾页</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- 文章逐级分类 -->
-
-        <div class="pdv_class" style="width:1002px;height:72px;top:0px;left:0px; z-index:2">
-            <div class="pdv_content" style="overflow:hidden;width:100%;height:100%">
+        <div id='pdv_17311' class="pdv_class" style="width:1002px;height:72px;top:0px;left:0px; z-index:2">
+            <div id='spdv_17311' class="pdv_content" style="overflow:hidden;width:100%;height:100%">
                 <div class="pdv_border" style="border: 0px; height: 72px;">
                     <link href="css/newsclass.css" rel="stylesheet" type="text/css"/>
                     <div class="sidebar">
                         <div class="wrap">
                             <ul id="child-menu">
-                                <li class="dq" th:each="child,childStat:${children}"><a style="cursor: pointer" th:text="${child.menuCname}"></a></li>
+                                <li class="dq" th:each="child,childStat:${children}"><a style="cursor: pointer" th:text="${child.menuCname}" th:value="${child.menuEname}"></a></li>
                             </ul>
                         </div>
                     </div>
@@ -142,9 +83,9 @@
 
         <!-- 自定义模版 -->
 
-        <div class="pdv_class" title=""
+        <div id='pdv_17312' class="pdv_class" title=""
              style="width: 1002px; height: 167px; top: 1561px; left: 0px; z-index: 6;">
-            <div class="pdv_content" style="overflow:hidden;width:100%;height:100%">
+            <div id='spdv_17312' class="pdv_content" style="overflow:hidden;width:100%;height:100%">
                 <div class="pdv_border" style="border: 0px; height: 167px;">
                     <div class="contant">
                         <div class="m-tel">
@@ -164,25 +105,19 @@
                 </div>
             </div>
         </div>
-        <div class="pdv_class" title="文章正文"
+        <div id='pdv_17317' class="pdv_class" title="文章正文"
              style="width: 1001px; height: 415px; top: 78px; left: 0px; z-index: 6;">
-            <div class="pdv_content" style="overflow:visible;width:100%;">
+            <div id='spdv_17317' class="pdv_content" style="overflow:visible;width:100%;">
                 <div class="pdv_border" style="border:0">
                     <link href="./css/newscontent.css" rel="stylesheet"
                           type="text/css"/>
-                    <script type="text/javascript"
-                            src="./js/newscontent.js"></script>
+                    <!--<script type="text/javascript"-->
+                            <!--src="./js/newscontent.js"></script>-->
                     <div id="newscontent">
-                        <div class="newstitle">管理和质量保证体系国际质量管理和质量保证体系国际质量</div>
-                        <div class="info">作者：管理员 &nbsp;&nbsp; 发布于：2009-12-15 16:22:19</div>
-                        <div id="memo" class="memo" style="display:none"><span style="color:#ff6600">摘要：</span></div>
-                        <div id="con" class="con"><p>公司全面实施ISO9000、2000国际质量管理和质量保证体系</p>
-                            <p>公司全面实施ISO9000、2000国际质量管理和质量保证体系</p>
-                            <p>公司全面实施ISO9000、2000国际质量管理和质量保证体系</p>
-                            <p>公司全面实施ISO9000、2000国际质量管理和质量保证体系</p>
-                            <p>公司全面实施ISO9000、2000国际质量管理和质量保证体系</p>
-                            <p>公司全面实施ISO9000、2000国际质量管理和质量保证体系</p>
-                            <p>公司全面实施ISO9000、2000国际质量管理和质量保证体系</p>
+                        <div th:text="${listInfo.listTitle}" class="newstitle"></div>
+                        <div th:text="'作者：'+${listInfo.author}+'&nbsp;&nbsp;&nbsp;&nbsp;发布于：'+${listInfo.gmtModified}" class="info"></div>
+                        <div id="con" class="con">
+                            <p th:text="${listInfo.listContent}"></p>
                         </div>
                     </div>
                 </div>
@@ -190,12 +125,9 @@
         </div>
     </div>
     <div id="bottom" style="width: 1002px; height: 34px; background: none 0% 0% repeat rgb(0, 0, 0);">
-
-
         <!-- 底部信息编辑区 -->
-
-        <div class="pdv_class" title="脚注信息" style="width:1002px;height:29px;top:5px;left:0px; z-index:5">
-            <div class="pdv_bottom" style="overflow:hidden;width:100%;height:100%">
+        <div id='pdv_17314' class="pdv_class" title="脚注信息" style="width:1002px;height:29px;top:5px;left:0px; z-index:5">
+            <div id='spdv_17314' class="pdv_bottom" style="overflow:hidden;width:100%;height:100%">
                 <div class="pdv_border" style="border: 0px; height: 29px;">
                     <div style="width:100%;text-align:center;font:12px/20px Arial, Helvetica, sans-serif">
                         <p align="center">
@@ -230,11 +162,15 @@
 <script th:inline="javascript">
     //<![CDATA[
     $(window).load(function () {
-        var name = [[${menuEname}]];
-        $("#"+name).attr('style','cursor:pointer;color:#CABA7C');
-        $("#"+name).siblings().attr('style','cursor:pointer;');
-        var subName = getFirstMenu(name);
-        $("#sub-title").html(subName.menuCname);
+        var name = getContextPosition().replace("/","");
+        var index = name.indexOf("-");
+        var parentName = name;
+        if(index != -1){
+            parentName = name.substring(0,index);
+        }
+        $("#"+parentName).attr('style','cursor:pointer;color:#CABA7C');
+        $("#"+parentName).siblings().attr('style','cursor:pointer;');
+        var subName = getMenuByEname(name);
         $("#hotline").html(getCommonByEname("hotline"));
         $("#weixin").attr('src','./images/'+getCommonByEname("weixin"));
     });
@@ -244,18 +180,10 @@
     });
     <!--子标题-->
     $("#child-menu").find('li').find('a').click(function () {
-        var title = $(this).text();
-        var id = $(this).parent().attr("id");
-        $("#sub-title").html(title);
-        $("#sub-image").attr('src','./images/'+getImageByEname(id)[0].imageUri);
-        $("#sub-content").html(getTextByMenuEname(id));
+        var value = $(this).attr('value');
+        var href = getContextPath()+"/"+value;
+        window.location.href=href;
     });
-    function page(pageNum,pageSize) {
-
-        var suffix = "/news?pageNum="+pageNum+"&pageSize="+pageSize;
-        window.location.href=getContextPath()+suffix;
-
-    }
     //]]>
 </script>
 </body>

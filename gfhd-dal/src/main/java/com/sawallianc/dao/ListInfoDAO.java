@@ -11,4 +11,6 @@ public interface ListInfoDAO {
     int countAllList(@Param("ename")String ename);
 
     ListInfoDO getListInfoById(@Param("id")long id);
+
+    List<ListInfoDO> query5ListInfoForHome();
 }

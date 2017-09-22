@@ -9,6 +9,7 @@ import com.sawallianc.module.MenuDO;
 import com.sawallianc.service.ImageService;
 import com.sawallianc.service.ListService;
 import com.sawallianc.service.MenuService;
+import com.sawallianc.service.TextService;
 import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
@@ -37,6 +38,9 @@ public class WebController extends WebAdvice {
     @Autowired
     private ImageService imageService;
 
+    @Autowired
+    private TextService textService;
+
     @GetMapping("page")
     public String page(Model model,@RequestParam(defaultValue = "1") Integer pageNum, @RequestParam(defaultValue = "3") Integer pageSize) {
         PageInfo<MenuDO> pageInfo = menuService.pageQuery(pageNum, pageSize);
@@ -60,7 +64,9 @@ public class WebController extends WebAdvice {
     @GetMapping("home")
     @FrontModel
     public String home(Model model) {
-
+        model.addAttribute("lists",listService.query5ListInfoForHome());
+        model.addAttribute("about",textService.getTextByMenuEname("home"));
+        model.addAttribute("backgroundImages",imageService.getImageByEname("home"));
         return "home";
     }
 

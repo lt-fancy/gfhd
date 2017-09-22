@@ -13,10 +13,11 @@
         <result property="gmtModified" column="gmt_modified"/>
         <result property="isDeleted" column="is_deleted"/>
         <result property="author" column="author"/>
+        <result property="isHome" column="is_home"/>
     </resultMap>
 
     <sql id="baseList">
-        id,menu_cname,menu_ename,list_title,list_content,gmt_created,gmt_modified,is_deleted,author
+        id,menu_cname,menu_ename,list_title,list_content,gmt_created,gmt_modified,is_deleted,author,is_home
     </sql>
 
     <select id="getListByEname" resultMap="listMap">
@@ -37,5 +38,13 @@
         select <include refid="baseList"/>
         from list_info
         where id=#{id}
+    </select>
+
+    <select id="query5ListInfoForHome" resultMap="listMap">
+        select <include refid="baseList"/>
+        from list_info
+        where is_deleted=0
+        and is_home=0
+        limit 5
     </select>
 </mapper>

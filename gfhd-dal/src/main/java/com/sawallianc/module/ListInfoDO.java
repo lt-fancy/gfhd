@@ -10,5 +10,5 @@ public class ListInfoDO extends BaseDO{
     private String listTitle;
     private String listContent;
     private String author;
-
+    private Integer isHome;
 }

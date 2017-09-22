@@ -21,11 +21,7 @@
                 <div class="banner">
                     <div class="bd">
                         <ul>
-
-                            <li style="background: url(/images/2_meitu_7.jpg) center top no-repeat;"></li>
-
-                            <li style="background: url(/images/17_meitu_6.jpg) center top no-repeat;"></li>
-
+                            <li th:each="image,imageStat:${backgroundImages}" th:style="'background: url(./images/'+${image.imageUri}+') center top no-repeat;'"></li>
                         </ul>
                     </div>
                     <div class="hd">
@@ -45,7 +41,7 @@
                 <style>.header {position: fixed;}</style>
                 <div class="header">
                     <div class="wrap clearfix">
-                        <h1 class="logo"><a href="http://demo.weboss.hk/w062/index.php" title="">
+                        <h1 class="logo"><a href="#" title="">
                             <img src="/images/1505207849.png"/></a></h1>
                         <div class="nav">
                             <ul class="clearfix" id="menus">
@@ -63,25 +59,17 @@
 
         <!-- 文章列表 -->
 
-        <div id="pdv_17269" class="pdv_class" title="公司动态" style="width:511px;height:179px;top:30px;left:0px; z-index:3">
+        <div id="pdv_17269" class="pdv_class" style="width:511px;height:179px;top:30px;left:0px; z-index:3">
             <div id="spdv_17269" class="pdv_content" style="overflow:hidden;width:100%;height:100%">
                 <div class="pdv_border" style="border: 0px; height: 179px; padding: 0px; margin: 0px;">
-                    <div class="tittle"><h2>公司动态<em>/ NEWS</em></h2><a href="http://demo.weboss.hk/w062/news/class/" class="more" style="display:inline;">+ more</a></div>
+                    <div class="tittle"><h2 th:text="${children[0].menuCname}"><em>/ NEWS</em></h2><a id="news-more" href="#" class="more" style="display:inline;">+ more</a></div>
                     <div style="margin:0px;padding:0px">
 
                         <link href="./css/newslist.css" rel="stylesheet" type="text/css"/>
                         <ul class="newslist">
-
-                            <li class="newslist"><a href="http://demo.weboss.hk/w062/news/html/?376.html" target="_self" class="newslist">本公司通过国家科技部高新技术企业认证</a></li>
-
-                            <li class="newslist"><a href="http://demo.weboss.hk/w062/news/html/?366.html" target="_self" class="newslist">某某公司新版网站全新改版成功</a></li>
-
-                            <li class="newslist"><a href="http://demo.weboss.hk/w062/news/html/?346.html" target="_self" class="newslist">国际质量管理和质量保证体系国际质量体系</a></li>
-
-                            <li class="newslist"><a href="http://demo.weboss.hk/w062/news/html/?338.html" target="_self" class="newslist">管理和质量保证体系国际质量管理和质量保证体系国际质量</a></li>
-
-                            <li class="newslist"><a href="http://demo.weboss.hk/w062/news/html/?336.html" target="_self" class="newslist">公司全面实施国际质量管理和质量保证体系司全面国际质量管</a></li>
-
+                            <li th:each="list,listStat:${lists}" class="newslist">
+                                <a th:text="${list.listTitle}" th:value="${list.id}" href="#" target="_self" class="newslist"></a>
+                            </li>
                         </ul>
 
                     </div>
@@ -92,12 +80,12 @@
 
         <!-- HTML编辑区 -->
 
-        <div id="pdv_17270" class="pdv_class" title="关于我们" style="width:467px;height:200px;top:30px;left:535px; z-index:4">
+        <div id="pdv_17270" class="pdv_class" style="width:467px;height:200px;top:30px;left:535px; z-index:4">
             <div id="spdv_17270" class="pdv_content" style="overflow:hidden;width:100%;height:100%">
                 <div class="pdv_border" style="border: 0px; height: 200px; padding: 0px; margin: 0px;">
-                    <div class="tittle"><h2>关于我们<em>/ ABOUT US</em></h2><a href="http://demo.weboss.hk/w062/page/html/company.php" class="more" style="display:inline;">+ more</a></div>
+                    <div class="tittle"><h2 th:text="${children[1].menuCname}"><em>/ ABOUT US</em></h2><a id="about-more" href="#" class="more" style="display:inline;">+ more</a></div>
                     <div style="margin:0px;padding:5px">
-                        <span style="line-height:2;"><span style="color:#505050;font-size:14px;line-height:2;">企业形象通用成品网站系列预装了网页模块、文章模块、产品模块、图文模块、招聘模块、广告模块等功能，预设了企业简介、企业文化、最新动态、产品展示、经典案例、品牌加盟、人才招聘、联系方式、客户留言等栏目，用户也可根据自己的需要方便调整；企业形象通用成品网站系列采用原创的企业形象宣传广告图片轮播，精心设计制作，符合大多数企业网站的需求...</span></span>
+                        <span style="line-height:2;"><span th:text="${about.text}" style="color:#505050;font-size:14px;line-height:2;"></span></span>
                     </div>
                 </div>
 
@@ -113,20 +101,6 @@
                     <h2>客服热线</h2>
                     <p id="hotline">021-123456</p>
                 </div>
-                <!--<div class="qxjj">-->
-                    <!--<a>-->
-                        <!--<img src="/images/code2.png" width="50" height="48"/>-->
-                        <!--<h2>我们的APP</h2>-->
-                        <!--<p>扫描下载</p>-->
-                    <!--</a>-->
-                <!--</div>-->
-                <!--<div class="m-wb">-->
-                    <!--<a href="http://demo.weboss.hk/w062/index.php" target="_blank">-->
-                        <!--<img src="/images/img-3.jpg" alt=""/>-->
-                        <!--<h2>我们微博</h2>-->
-                        <!--<p>快来关注我们微博</p>-->
-                    <!--</a>-->
-                <!--</div>-->
                 <div class="m-wx">
                     <img src="/images/20150727114020.jpg" width="90" height="90" id="weixin"/>
                     <div class="text">
@@ -180,6 +154,9 @@
         $("#"+name).siblings().attr('style','cursor:pointer;');
         $("#hotline").html(getCommonByEname("hotline"));
         $("#weixin").attr('src','./images/'+getCommonByEname("weixin"));
+        $('a.newslist').attr('href',getContextPath()+"/news-detail?id="+$('a.newslist').attr('value'));
+        $("#news-more").attr('href',getContextPath()+"/news");
+        $("#about-more").attr('href',getContextPath()+"/about");
     });
     $("#menus").find('li').find('a').click(function () {
         var i = $(this).attr('id');

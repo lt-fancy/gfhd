@@ -9,4 +9,5 @@ public class ListInfoBO extends BaseBO{
     private String listTitle;
     private String listContent;
     private String author;
+    private Integer isHome;
 }

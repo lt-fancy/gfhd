@@ -48,6 +48,11 @@ public class ListServiceImpl implements ListService{
         return this.boFromDO(listInfoDAO.getListInfoById(id));
     }
 
+    @Override
+    public List<ListInfoBO> query5ListInfoForHome() {
+        return this.bosFromDOS(listInfoDAO.query5ListInfoForHome());
+    }
+
     private ListInfoBO boFromDO(ListInfoDO listInfoDO){
         if(null == listInfoDO){
             return null;

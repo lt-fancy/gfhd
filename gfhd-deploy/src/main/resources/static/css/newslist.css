@@ -13,6 +13,7 @@ li.newslist {
     color:#fff;
     background: transparent url(../images/li1.gif) left no-repeat;
     border-bottom: 1px dotted #BFBFBF;
+
 }
 
 a.newslist:link,a.newslist:visited,a.newslist:active{

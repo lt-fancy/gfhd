@@ -13,4 +13,6 @@ public interface ListService {
     int countAllList(String ename);
 
     ListInfoBO getListInfoById(long id);
+
+    List<ListInfoBO> query5ListInfoForHome();
 }

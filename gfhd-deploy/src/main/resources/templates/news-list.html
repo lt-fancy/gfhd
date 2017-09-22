@@ -77,15 +77,18 @@
                             <div class="shop_select">
                             </div>
                         </form>
-                        <ul>
-                            <li id="sub-list" th:each="list,listStat:${lists}">
-                                <a id="list-image" style="cursor: pointer" th:value="${list.id}">
+                        <ul id="list-total">
+                            <li th:each="list,listStat:${lists}">
+                                <a th:id="'list-image'+${list.id}" style="cursor: pointer" th:value="${list.id}">
                                     <img src="./images/1365417851.jpg" width="251" height="127"/></a>
                                 <div class="text">
-                                    <h2><a id="list-title" style="cursor: pointer" th:text="${list.listTitle}"></a></h2>
+                                    <h2><a th:id="'list-title'+${list.id}" style="cursor: pointer" th:text="${list.listTitle}"></a></h2>
                                     <span th:text="${#strings.substring(list.gmtModified,0,10)}"></span>
-                                    <p th:text="${list.listContent}"></p>
-                                    <a id="list-more" style="cursor: pointer" class="more">READ MORE</a>
+                                    <!--<p th:text="${#strings.substring(list.listContent,0,50)+'...'}"></p>-->
+                                    <p th:if="${#strings.length(list.listContent)} gt 163" th:text="${#strings.substring(list.listContent,0,163)}+'...'"></p>
+                                    <p th:if="${#strings.length(list.listContent)} lt 163" th:text="${list.listContent}"></p>
+                                    <!--<p th:text="${#strings.length(list.listContent)} gt 50?#string.substring(list.listContent,0,50):list.listContent}"></p>-->
+                                    <a th:id="'list-more'+${list.id}" style="cursor: pointer" class="more">READ MORE</a>
                                 </div>
                             </li>
                         </ul>
@@ -222,13 +225,13 @@
         var href = getContextPath()+"/"+value;
         window.location.href=href;
     });
-    $("#sub-list").each(function (i,v) {
+    $("#list-total").find('li').each(function (i,v) {
         var _a = $(v).find('a');
         var id = $(_a).attr('value');
         var href = getContextPath()+"/news-detail?id="+id;
-        $("#list-image").attr('href',href);
-        $("#list-title").attr('href',href);
-        $("#list-more").attr('href',href);
+        $("#list-image"+(i+1)).attr('href',href);
+        $("#list-title"+(i+1)).attr('href',href);
+        $("#list-more"+(i+1)).attr('href',href);
     })
     function page(pageNum,pageSize) {
         var suffix = "/news?pageNum="+pageNum+"&pageSize="+pageSize;
